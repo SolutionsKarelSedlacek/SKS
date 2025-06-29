@@ -1,0 +1,214 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.App-header {
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.SKS-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.Warning-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link:hover {
+  background-color: #61dafb;
+  color: #000;
+}
+
+.discord-box {
+  position: relative;
+  max-width: 20vw;
+  max-height: 20vh;
+  min-width: 8vw;
+  min-height: 8vh;
+}
+
+.Discord {
+  max-width: 20vw;
+  max-height: 20vh;
+  z-index: 3;
+  transition: opacity 5.3s ease;
+}
+
+.discord-box:hover .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url('discord2.svg') no-repeat center/contain;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 3.3s ease;
+}
+
+.discord-box:hover .Discord {
+  opacity: 0;
+}
+
+.discord-box:hover .overlay {
+  opacity: 1;
+}
+
+.discord-link {
+  margin-top: 1em;
+}
+
+ html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #0D343A;
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(13,52,58,1)), to(#000000));
+  background: linear-gradient(to bottom, rgba(13,52,58,1) 0%, rgba(0,0,0,1) 100%);
+}
+
+.text {
+  font-family: 'Anton', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: white;
+  z-index: 3;
+  font-size: calc(8px+1vmin);
+}
+
+.event-name, .event-date {
+  font-family: 'Anton', Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-shadow: 
+    2px 2px 0 #000,
+    -2px -2px 0 #000,
+    2px -2px 0 #000,
+    -2px 2px 0 #000,
+    0 2px 0 #000,
+    2px 0 0 #000,
+    0 -2px 0 #000,
+    -2px 0 0 #000;
+  z-index: 3;
+}
+
+.event-name {
+  font-size: 8vw; /* Responsive font size */
+  margin-bottom: 0.01vw;
+  z-index: 3;
+}
+
+.event-date {
+  font-size: 2vw; /* Responsive font size */
+  margin-bottom: 0.3em;
+  z-index: 3;
+}
+
+.SKS-world {
+  max-width: 90vw;  
+  max-height: 90vh;  
+}
+
+.App-world {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+
+.App-link {
+  color: #61dafb;
+  margin: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .event-name {
+    font-size: 12vw;
+  }
+
+  .event-date, .event-place {
+    font-size: 4vw;
+  }
+
+  .text {
+    font-size: calc(1px + 2vw);
+  }
+
+  .App-link {
+    font-size: 3vw;
+  }
+
+  .Discord {
+    width: 25vw;
+  }
+}
+
+@media (min-aspect-ratio: 17/9) {
+  .event-name {
+    font-size: 14vh;
+  }
+
+  .event-date, .event-place {
+    font-size: 4vh;
+  }
+
+  .text {
+    font-size: calc(4px + 2vh);
+  }
+
+  .App-link {
+    font-size: 3vh;
+  }
+
+  .Discord {
+    width: 25vh;
+  }
+}
+
+.rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+.drop {
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(rgba(13,52,58,1)), to(rgba(255,255,255,0.6)));
+  background: linear-gradient(to bottom, rgba(13,52,58,1) 0%, rgba(255,255,255,.6) 100%);
+  width: 1px;
+  height: 89px;
+  position: absolute;
+  bottom: 200px;
+  animation: fall 1.3s linear infinite;
+}
+@keyframes fall {
+  to {
+    margin-top: 900px;
+  }
+}
