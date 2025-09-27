@@ -89,7 +89,7 @@ const SilvesterPage: React.FC = () => {
                 href={chata_link}
                 className="text-red-600 hover:text-blue-300 underline"
               >Chata Klauzovka</a> se nachází v samotném srdci nádherných Jizerských hor nedaleko Bedřichova, v ČR zimě si nelze přát lepší lokaci pro běžkování.
-              Chata má saunu a 2 pípi.
+              Chata má saunu a 2 pípy.
               Přijeď.
             </p>
             <p className="text-gray-300 text-sm leading-relaxed">
