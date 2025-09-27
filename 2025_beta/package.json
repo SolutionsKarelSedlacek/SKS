@@ -1,6 +1,7 @@
 {
   "name": "2025_beta",
   "version": "0.1.0",
+  "homepage": "https://solutionskarelsedlacek.github.io/SKS/2025_beta",
   "private": true,
   "dependencies": {
     "18": "0.0.0",

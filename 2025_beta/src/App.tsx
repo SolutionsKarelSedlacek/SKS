@@ -1,4 +1,5 @@
 import React from 'react';
+//import karelImage from './karel.png';
 
 const form_link: string = "https://forms.gle/KtAXmtLjXV3k5EzT8";
 const chata_link: string = "https://www.e-chalupy.cz/chalupa-u-alenky-albrechtice-v-jizerskych-horach-pronajem-o16371";
@@ -10,7 +11,7 @@ const SilvesterPage: React.FC = () => {
       <div className="relative w-full">
         <div className="flex justify-center">
           <img
-            src="/karel.png"
+            src={process.env.PUBLIC_URL + "/karel.png"}
             alt="Karel Sedláček"
             className="h-32 md:h-40 lg:h-48 object-contain"
           />
@@ -90,6 +91,9 @@ const SilvesterPage: React.FC = () => {
               >Chata Klauzovka</a> se nachází v samotném srdci nádherných Jizerských hor nedaleko Bedřichova, v ČR zimě si nelze přát lepší lokaci pro běžkování.
               Chata má saunu a 2 pípi.
               Přijeď.
+            </p>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Cena bude cca: menší než 500 + jídlo + saunovné / den.
             </p>
           </div>
         </div>
