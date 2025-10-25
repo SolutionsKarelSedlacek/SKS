@@ -38,8 +38,51 @@ const typeColors: Record<string, string> = {
 const Karldex: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Sample Pokémon data - replace with your actual data
   const pokemonList: Pokemon[] = [
+  {
+    number: "001",
+    name: "Tadeáš",
+    description: "A ghost wandering around the world, desperately seeking its nickname, clutching a wrinkled birth certificat bearing only its name. It's the last remnant of its previous lives. Often appears skittish — that’s because echoes of past times still whisper to him.",
+    image: "karlmoni/tadeas.png",
+    type: "Fairy"
+  },
+  {
+    number: "002",
+    name: "Ondra Polák",
+    description: "A Pokémon that uses its psychic powers for ultimate cooking. It is highly intelligent and capable of instantly identifying its foe’s weakness — such as gluten or histamine. Its final form of Abra evolves from Alakazam using a Cooking Stone. Depending on the stone used in combination, it can evolve into Italian, French, or Vietnamese form.",
+    image: "karlmoni/ondrapolak.png",
+    type: "Psychic/Fire"
+  },
+  {
+    number: "003",
+    name: "Zuzka",
+    description: "Its tongue has well-developed nerves that run to the very tip, so it can be deftly manipulated. Its tongue, twice its body's length, moves around freely to catch prey. Its licks cause a tingling sensation. Nemesis of all food.",
+    image: "karlmoni/zuzka.png",
+    type: "Bug"
+  },
+  {
+    number: "004",
+    name: "Míša Kodad",
+    description: "Its tongue has highly developed nerves that extend to the very tip, allowing for precise movement. Twice the length of its body, it can freely twist around to catch prey. Its licks cause a tingling sensation. Nemesis of all food.",
+    image: "karlmoni/kodad.png",
+    type: "Electric"
+  },
+  {
+    number: "150",
+    name: "Fak",
+    description: "Probably a ghost created from leftover scraps of calmness itself. Scientists still don’t know how to interact with this entity safely.",
+    image: "karlmoni/fakomon.png",
+    type: "Dark/Fairy"
+  },
+  {
+    number: "151",
+    name: "Klátra",
+    description: "Born from genetic experiments, Klátra contains more energy than you can handle. Run.",
+    image: "karlmoni/klatra.png",
+    type: "Poison"
+  }
+];
+  const pokemonList3: Pokemon[] = [
     {
       number: "001",
       name: "Tadeáš",
