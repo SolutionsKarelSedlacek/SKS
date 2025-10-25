@@ -10,6 +10,31 @@ interface Pokemon {
   type: string;
 }
 
+const typeColors: Record<string, string> = {
+  Normal: "bg-gray-400",
+  Fire: "bg-red-600",
+  Water: "bg-blue-600",
+  Electric: "bg-yellow-500",
+  Grass: "bg-green-600",
+  Ice: "bg-cyan-500",
+  Fighting: "bg-orange-700",
+  Poison: "bg-purple-700",
+  Ground: "bg-yellow-800",
+  Flying: "bg-sky-500",
+  Psychic: "bg-pink-600",
+  Bug: "bg-lime-600",
+  Rock: "bg-stone-600",
+  Ghost: "bg-indigo-700",
+  Dragon: "bg-indigo-800",
+  Dark: "bg-gray-800",
+  Steel: "bg-slate-600",
+  Fairy: "bg-pink-400",
+  "Grass/Poison": "bg-gradient-to-r from-green-600 to-purple-700",
+  "Ghost/Poison": "bg-gradient-to-r from-indigo-700 to-purple-700",
+  "Psychic/Fire": "bg-gradient-to-r from-pink-600 to-red-700",
+  "Dark/Fairy": "bg-gradient-to-r from-gray-800 to-pink-500"
+};
+
 const Karldex: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -18,44 +43,44 @@ const Karldex: React.FC = () => {
     {
       number: "001",
       name: "Tadeáš",
-      description: "A strange seed was planted on its back at birth, growing alongside this creature.",
-      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/201.png",
-      type: "Grass/Poison"
+      description: "A ghost wondering around the world desperately seeking for its nick name holding wrinkled birth certificate with just name. It is his last ressemlance of his previous lives. Often looks skittysh, thas because echoes of past times are talking to him.",
+      image: "karlmoni/tadeas.png",
+      type: "Fairy"
     },
     {
       number: "002",
       name: "Ondra Polák",
-      description: "The flame that burns at the tip of its tail is an indication of its emotions.",
-      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/146.png",
-      type: "Fire"
+      description: "A Pokémon that uses his psychic power for ultimate cooking. It is highly intelligent and capable of instantly identifying its foe's weakness, like gluten or histamin. Its final form of Abra evolving from Alakazam by using cooking stone. According to used stone in combination it can be evolved into Italian, French or Vietnamese form.",
+      image: "karlmoni/ondrapolak.png",
+      type: "Psychic/Fire",
     },
     {
       number: "003",
       name: "Zuzka",
-      description: "When it retracts its long neck into its shell, it squirts out water with vigorous force.",
-      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/402.png",
-      type: "Water"
+      description: "It signals its emotions with its melodies. Scientists are studying these melodic patterns. Evolving from Kricketune during sunsets while drinking mountain water in Beskydy region.",
+      image: "karlmoni/zuzka.png",
+      type: "Bug"
     },
     {
       number: "004",
-      name: "Míša Kódy",
-      description: "When several of these creatures gather, their electricity creates lightning storms.",
-      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/212.png",
+      name: "Míša Kodad",
+      description: "Its tongue has well-developed nerves that run to the very tip, so it can be deftly manipulated.  Its tongue, twice its body's length, moves around freely to catch prey. Its licks cause a tingling sensation. Nemesis of all food.",
+      image: "karlmoni/kodad.png",
       type: "Electric"
     },
     {
       number: "150",
       name: "Fak",
-      description: "Created from genetic experiments, it is a Pokémon that exists solely for battle.",
-      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/583.png",
-      type: "Psychic"
+      description: "Probably ghost created as scrap material of producing calmness. Scientist still don't know how to interact with this thing safely.",
+      image: "karlmoni/fakomon.png",
+      type: "Dark/Fairy"
     },
     {
       number: "151",
       name: "Klátra",
-      description: "Created from genetic experiments, it is a Pokémon that exists solely for battle.",
-      image: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/569.png",
-      type: "Psychic"
+      description: "Created from genetic experiments, it is a Klátra and have more energy than you can handle. Run.",
+      image: "karlmoni/klatra.png",
+      type: "Poison"
     }
   ];
 
@@ -74,19 +99,34 @@ const Karldex: React.FC = () => {
             <span className="font-semibold">Back to Main</span>
           </Link>
           
-          <div className="bg-gray-900 border-4 border-red-600 rounded-lg p-6 shadow-2xl">
-            <h1 
-              className="text-4xl md:text-5xl font-bold text-center mb-2"
-              style={{
-                fontFamily: 'Pokemon Solid, Impact, sans-serif',
-                textShadow: '3px 3px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, 1px 1px 0px #000',
-                letterSpacing: '2px',
-                color: '#FFD700'
-              }}
-            >
-              KÁRLDEX
-            </h1>
-            <p className="text-center text-gray-400 text-lg">Database of Captured Creatures</p>
+          <div className="bg-gray-900 border-4 border-red-600 rounded-lg p-6 shadow-2xl relative overflow-hidden">
+            <div className="flex items-center justify-center">
+              <div className="flex flex-1 flex-col items-center justify-center gap-2">
+                <h1
+                  className="text-4xl md:text-5xl font-bold flex items-center gap-4"
+                  style={{
+                    fontFamily: 'Pokemon Solid, Impact, sans-serif',
+                    textShadow:
+                      '3px 3px 0px #000, -1px -1px 0px #000, 1px -1px 0px #000, -1px 1px 0px #000, 1px 1px 0px #000',
+                    letterSpacing: '2px',
+                    color: '#FFD700',
+                  }}
+                >
+                  KÁRLDEX
+                </h1>
+          
+                <p className="text-center text-gray-400 text-lg mt-2">
+                  Database of Captured Creatures
+                </p>
+              </div>
+              <div className="flex">
+              <img
+                  src="karlmoni/karel.png"
+                  alt="Profesor Karel"
+                  className="object-contain drop-shadow-lg h-16 md:h-20 lg:h-24"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
@@ -106,7 +146,9 @@ const Karldex: React.FC = () => {
 
         {/* Pokémon Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredPokemon.map((pokemon) => (
+          {filteredPokemon.map((pokemon) => {
+            const gradient = typeColors[pokemon.type] || "from-gray-500 to-gray-700";
+            return (
             <div
               key={pokemon.number}
               className="bg-white rounded-lg shadow-xl overflow-hidden transform transition-all duration-200 hover:scale-105 hover:shadow-2xl cursor-pointer border-4 border-gray-200 hover:border-red-400"
@@ -114,7 +156,13 @@ const Karldex: React.FC = () => {
               {/* Pokémon Number Badge */}
               <div className="bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-2">
                 <span className="font-bold text-lg">#{pokemon.number}</span>
-                <span className="float-right text-sm bg-red-800 px-2 py-1 rounded">{pokemon.type}</span>
+                <span
+                  className={`float-right px-3 py-1 rounded-full text-white text-sm font-semibold border border-white ${
+                    typeColors[pokemon.type] || "bg-gray-500"
+                  }`}
+                >
+                  {pokemon.type}
+                </span>
               </div>
 
               {/* Pokémon Image */}
@@ -132,7 +180,7 @@ const Karldex: React.FC = () => {
                 <p className="text-gray-600 text-sm leading-relaxed">{pokemon.description}</p>
               </div>
             </div>
-          ))}
+          );})}
         </div>
 
         {/* No Results Message */}
