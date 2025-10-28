@@ -1,8 +1,11 @@
 import React from 'react';
+import discord from './discord.svg';
+import discord2 from './discord2.svg';
 //import karelImage from './karel.png';
 
 const form_link: string = "https://forms.gle/KtAXmtLjXV3k5EzT8";
 const chata_link: string = "https://www.e-chalupy.cz/chalupa-u-alenky-albrechtice-v-jizerskych-horach-pronajem-o16371";
+const discordUrl = "https://discord.gg/34mxUjXMF6";
 
 const SilvesterPage: React.FC = () => {
   return (
@@ -67,6 +70,13 @@ const SilvesterPage: React.FC = () => {
                 Silvester bude!
               </li>
             </ul>
+
+        <div className="discord-box">
+          <a href={discordUrl} target="_blank" rel="noopener noreferrer" className="discord-link">
+            <img src={discord} className="Discord" alt="discord" />
+            <div className="overlay"></div>
+          </a>
+        </div>
           </div>
 
           {/* Right column - Date and details */}

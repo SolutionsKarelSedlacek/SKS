@@ -7,6 +7,54 @@
   pointer-events: none;
 }
 
+.discord-box {
+  position: relative;
+  max-width: 20vw;
+  max-height: 20vh;
+  min-width: 8vw;
+  min-height: 8vh;
+}
+
+.Discord {
+  max-width: 20vw;
+  max-height: 20vh;
+  z-index: 3;
+  transition: opacity 5.3s ease;
+}
+
+.discord-box:hover .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent url('discord2.svg') no-repeat center/contain;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 3.3s ease;
+}
+
+.discord-box:hover .Discord {
+  opacity: 0;
+}
+
+.discord-box:hover .overlay {
+  opacity: 1;
+}
+
+.discord-link {
+  margin-top: 1em;
+}
+
+.App-world {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
