@@ -69,6 +69,13 @@ const Karldex: React.FC = () => {
     type: "Electric"
   },
   {
+    number: "007",
+    name: "Kuba Žoldák",
+    description: "For no reason, Magicarp jumps and splashes about, making it easy for predators like PIDGEOTTO to catch it mid-jump. This behavior prompted scientists to skip research into it. Therefore we don't know surely if Slovak form is any different.", 
+    image: "karlmoni/jakub.png",
+    type: "Water"
+  },
+  {
     number: "006",
     name: "Jarek Požár",
     description: "Dance form of Blaziken has incredibly strong legs - it can easily clear a 30-story building in one leap. This POKéMON’s blazing punches leave its foes scorched and blackened. Evolving from Blaziken after winning dancing contest while musicaly accompanimented by emmo-music.",
