@@ -57,7 +57,7 @@ const Karldex: React.FC = () => {
   {
     number: "003",
     name: "Zuzka",
-    description: "Its tongue has well-developed nerves that run to the very tip, so it can be deftly manipulated. Its tongue, twice its body's length, moves around freely to catch prey. Its licks cause a tingling sensation. Nemesis of all food.",
+    description: "It signals its emotions with its melodies. Scientists are studying these melodic patterns. Evolving from Kricketune during sunsets while drinking mountain water in the Beskydy region.",
     image: "karlmoni/zuzka.png",
     type: "Bug"
   },
@@ -90,50 +90,6 @@ const Karldex: React.FC = () => {
     type: "Poison"
   }
 ];
-  const pokemonList3: Pokemon[] = [
-    {
-      number: "001",
-      name: "Tadeáš",
-      description: "A ghost wondering around the world desperately seeking for its nick name holding wrinkled birth certificate with just name. It is his last ressemlance of his previous lives. Often looks skittysh, thas because echoes of past times are talking to him.",
-      image: "karlmoni/tadeas.png",
-      type: "Fairy"
-    },
-    {
-      number: "002",
-      name: "Ondra Polák",
-      description: "A Pokémon that uses his psychic power for ultimate cooking. It is highly intelligent and capable of instantly identifying its foe's weakness, like gluten or histamin. Its final form of Abra evolving from Alakazam by using cooking stone. According to used stone in combination it can be evolved into Italian, French or Vietnamese form.",
-      image: "karlmoni/ondrapolak.png",
-      type: "Psychic/Fire",
-    },
-    {
-      number: "003",
-      name: "Zuzka",
-      description: "It signals its emotions with its melodies. Scientists are studying these melodic patterns. Evolving from Kricketune during sunsets while drinking mountain water in Beskydy region.",
-      image: "karlmoni/zuzka.png",
-      type: "Bug"
-    },
-    {
-      number: "004",
-      name: "Míša Kodad",
-      description: "Its tongue has well-developed nerves that run to the very tip, so it can be deftly manipulated.  Its tongue, twice its body's length, moves around freely to catch prey. Its licks cause a tingling sensation. Nemesis of all food.",
-      image: "karlmoni/kodad.png",
-      type: "Electric"
-    },
-    {
-      number: "150",
-      name: "Fak",
-      description: "Probably ghost created as scrap material of producing calmness. Scientist still don't know how to interact with this thing safely.",
-      image: "karlmoni/fakomon.png",
-      type: "Dark/Fairy"
-    },
-    {
-      number: "151",
-      name: "Klátra",
-      description: "Created from genetic experiments, it is a Klátra and have more energy than you can handle. Run.",
-      image: "karlmoni/klatra.png",
-      type: "Poison"
-    }
-  ];
 
   const filteredPokemon = pokemonList.filter(pokemon =>
     pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
