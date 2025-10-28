@@ -32,7 +32,8 @@ const typeColors: Record<string, string> = {
   "Grass/Poison": "bg-gradient-to-r from-green-600 to-purple-700",
   "Ghost/Poison": "bg-gradient-to-r from-indigo-700 to-purple-700",
   "Psychic/Fire": "bg-gradient-to-r from-pink-600 to-red-700",
-  "Dark/Fairy": "bg-gradient-to-r from-gray-800 to-pink-500"
+  "Dark/Fairy": "bg-gradient-to-r from-gray-800 to-pink-500",
+  "Fire/Fighting": "bg-gradient-to-r from-red-700 to-orange-700"
 };
 
 const Karldex: React.FC = () => {
@@ -66,6 +67,13 @@ const Karldex: React.FC = () => {
     description: "Its tongue has highly developed nerves that extend to the very tip, allowing for precise movement. Twice the length of its body, it can freely twist around to catch prey. Its licks cause a tingling sensation. Nemesis of all food.",
     image: "karlmoni/kodad.png",
     type: "Electric"
+  },
+  {
+    number: "006",
+    name: "Jarek Požár",
+    description: "Dance form of Blaziken has incredibly strong legs - it can easily clear a 30-story building in one leap. This POKéMON’s blazing punches leave its foes scorched and blackened. Evolving from Blaziken after winning dancing contest while musicaly accompanimented by emmo-music.",
+    image: "karlmoni/Jarek.png",
+    type: "Fire/Fighting"
   },
   {
     number: "150",
