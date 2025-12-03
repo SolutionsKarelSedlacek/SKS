@@ -14,6 +14,7 @@ const typeColors: Record<string, string> = {
   Normal: "bg-gray-400",
   Fire: "bg-red-600",
   Water: "bg-blue-600",
+  Pending: "bg-gray-600",
   Electric: "bg-yellow-500",
   Grass: "bg-green-600",
   Ice: "bg-cyan-500",
@@ -30,6 +31,7 @@ const typeColors: Record<string, string> = {
   Steel: "bg-slate-600",
   Fairy: "bg-pink-400",
   "Grass/Poison": "bg-gradient-to-r from-green-600 to-purple-700",
+  "Bug/Grass": "bg-gradient-to-r from-lime-600 to-green-600",
   "Ghost/Poison": "bg-gradient-to-r from-indigo-700 to-purple-700",
   "Psychic/Fire": "bg-gradient-to-r from-pink-600 to-red-700",
   "Dark/Fairy": "bg-gradient-to-r from-gray-800 to-pink-500",
@@ -56,31 +58,150 @@ const Karldex: React.FC = () => {
   },
   {
     number: "003",
-    name: "Zuzka",
+    name: "Zuzka Sv.",
     description: "It signals its emotions with its melodies. Scientists are studying these melodic patterns. Evolving from Kricketune during sunsets while drinking mountain water in the Beskydy region.",
     image: "karlmoni/zuzka.png",
     type: "Bug"
   },
   {
     number: "004",
-    name: "Míša Kodad",
+    name: "Míša K.",
     description: "Its tongue has highly developed nerves that extend to the very tip, allowing for precise movement. Twice the length of its body, it can freely twist around to catch prey. Its licks cause a tingling sensation. Nemesis of all food.",
     image: "karlmoni/kodad.png",
     type: "Electric"
   },
   {
-    number: "007",
-    name: "Kuba Žoldák",
+    number: "005",
+    name: "Kuba Ž.",
     description: "For no reason, Magicarp jumps and splashes about, making it easy for predators like PIDGEOTTO to catch it mid-jump. This behavior prompted scientists to skip research into it. Therefore we don't know surely if Slovak form is any different.", 
     image: "karlmoni/jakub.png",
     type: "Water"
   },
   {
     number: "006",
+    name: "Manka",
+    description: "Mmmmmm, lets get some chocolate and see what can do. People say, that with enought chocolate or gummy bears can spread wing and become butterfly.",
+    image: "karlmoni/manka.png",
+    type: "Bug/Grass"
+  },
+  {
+    number: "007",
     name: "Jarek Požár",
     description: "Dance form of Blaziken has incredibly strong legs - it can easily clear a 30-story building in one leap. This POKéMON’s blazing punches leave its foes scorched and blackened. Evolving from Blaziken after winning dancing contest while musicaly accompanimented by emmo-music.",
     image: "karlmoni/Jarek.png",
     type: "Fire/Fighting"
+  },
+  {
+    number: "008",
+    name: "Dalibor",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
+    number: "009",
+    name: "Honza P.",
+    description: "Pony ta is very weak at birth. It can barely stand up. This Kárlmon becomes stronger by stumbling and falling to keep up with Plzeň.",
+    image: "karlmoni/ponic.png",
+    type: "Fire"
+  },
+  {
+    number: "010",
+    name: "Hans B.",
+    description: "At first sight this creature doesn't seem much alive due to his wooden-box visuals and scrunchy movements but could move surprisingly fast.",
+    image: "karlmoni/benda.png",
+    type: "Pending"
+  },
+  {
+    number: "011",
+    name: "Eša",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
+    number: "012",
+    name: "Bianka",
+    description: "For no reason, Magicarp jumps and splashes about, making it easy for predators like PIDGEOTTO to catch it mid-jump. This behavior prompted scientists to skip research into it. Therefore we don't know surely if Slovak form is any different.", 
+    image: "karlmoni/slovakmon.png",
+    type: "Water"
+  },
+  {
+    number: "013",
+    name: "Jarda P.",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
+    number: "014",
+    name: "Martin Švanda",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
+    number: "015",
+    name: "Jirka K.",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
+    number: "016",
+    name: "'Péčko' Z.",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
+    number: "017",
+    name: "Tom Dvořák",
+    description: "This one looks harmless and is harmless, besides obliterating you in chess, making a killer excel sheet and destroying you with memes. Alright, not so harmless afterall.",
+    image: "karlmoni/tom2.png",
+    type: "Bug"
+  },
+  {
+    number: "018",
+    name: "Fofík",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
+    number: "019",
+    name: "Markét L.",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
+    number: "020",
+    name: "Evžen",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
+    number: "021",
+    name: "Bambi",
+    description: "Though gentle by nature, it believes that to fight fires, there has to be fire in first place. Don't be fooled by it cuteness. This Kárlmon creates small flames in its fists to protect forests from greater threats.",
+    image: "karlmoni/bambi.png",
+    type: "Engineer"
+  },
+  {
+    number: "022",
+    name: "Barča Ž.",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
+    number: "023",
+    name: "Puf",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
   },
   {
     number: "150",
