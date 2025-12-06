@@ -204,6 +204,41 @@ const Karldex: React.FC = () => {
     type: "Pending"
   },
   {
+    number: "024",
+    name: "Kuba Šťastný",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
+    number: "025",
+    name: "Akvožu",
+    description: "It's just užovka. It's just spelled backwards. Feeds on ZISK offsprings.",
+    image: "karlmoni/uzovka.png",
+    type: "Pending"
+  },
+  {
+    number: "026",
+    name: "Petr anebo Martin",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
+    number: "027",
+    name: "Vojta V.",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
+    number: "028",
+    name: "Verča M.",
+    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+    image: "karlmoni/generating.png",
+    type: "Pending"
+  },
+  {
     number: "150",
     name: "Fak",
     description: "Probably a ghost created from leftover scraps of calmness itself. Scientists still don’t know how to interact with this entity safely.",
