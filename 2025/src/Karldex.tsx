@@ -178,9 +178,9 @@ const Karldex: React.FC = () => {
   {
     number: "020",
     name: "Evžen",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
+    description: "What are any of us doing here? Whether get your question right or wrong, free will is an illusion. Are we playing in Evžen movie, or is Evžen movie playing us?",
+    image: "karlmoni/evzen.png",
+    type: "Not Normal"
   },
   {
     number: "021",
@@ -199,8 +199,8 @@ const Karldex: React.FC = () => {
   {
     number: "023",
     name: "Puf",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
+    description: "Great explorer, but can’t resist petting cats, so basically can be observed on same places. For the sake of specialty food able to walk vast distances in search of rare flavors. Its curiosity knows no limits, often leading it on long treks for a single perfect bite instead of having proper rest and occasional mental tuning.",
+    image: "karlmoni/pufmime.png",
     type: "Pending"
   },
   {
@@ -215,7 +215,7 @@ const Karldex: React.FC = () => {
     name: "Akvožu",
     description: "It's just užovka. It's just spelled backwards. Feeds on ZISK offsprings.",
     image: "karlmoni/uzovka.png",
-    type: "Pending"
+    type: "Poison"
   },
   {
     number: "026",
