@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ArrowLeft, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-interface Pokemon {
-  number: string;
+
+interface Karlmon {
+  id: number;
   name: string;
   description: string;
   image: string;
@@ -38,225 +39,59 @@ const typeColors: Record<string, string> = {
   "Fire/Fighting": "bg-gradient-to-r from-red-700 to-orange-700"
 };
 
+export function useKarlmons() {
+  const [karlmons, setKarlmons] = useState<Karlmon[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    async function fetchKarlmons() {
+      try {
+        console.log("Starting fetch...");
+        const res = await fetch("http://100.117.27.39:8001/data")
+        //const res = await fetch("/SKS/2025/KarldexDb.json");
+        console.log("Response status:", res.status, res.ok);
+        console.log(res);
+        
+        const json = await res.json();
+        console.log("JSON structure:", json);
+        console.log("Data array:", json.data);
+        
+        // Your JSON has structure: { "data": [...] }
+        const dataArray = json.data || [];
+        console.log("Setting karlmons, count:", dataArray.length);
+        setKarlmons(dataArray);
+      } catch (err) {
+        console.error("Failed to load Kárlmons:", err);
+      } finally {
+        setLoading(false);
+      }
+    }
+
+    fetchKarlmons();
+  }, []);
+
+  return { karlmons, loading };
+}
+
 const Karldex: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const { karlmons, loading } = useKarlmons();
 
-  const pokemonList: Pokemon[] = [
-  {
-    number: "001",
-    name: "Tadeáš",
-    description: "A ghost wandering around the world, desperately seeking its nickname, clutching a wrinkled birth certificat bearing only its name. It's the last remnant of its previous lives. Often appears skittish — that’s because echoes of past times still whisper to him.",
-    image: "karlmoni/tadeas.png",
-    type: "Fairy"
-  },
-  {
-    number: "002",
-    name: "Ondra Polák",
-    description: "A Pokémon that uses its psychic powers for ultimate cooking. It is highly intelligent and capable of instantly identifying its foe’s weakness — such as gluten or histamine. Its final form of Abra evolves from Alakazam using a Cooking Stone. Depending on the stone used in combination, it can evolve into Italian, French, or Vietnamese form.",
-    image: "karlmoni/ondrapolak.png",
-    type: "Psychic/Fire"
-  },
-  {
-    number: "003",
-    name: "Zuzka Sv.",
-    description: "It signals its emotions with its melodies. Scientists are studying these melodic patterns. Evolving from Kricketune during sunsets while drinking mountain water in the Beskydy region.",
-    image: "karlmoni/zuzka.png",
-    type: "Bug"
-  },
-  {
-    number: "004",
-    name: "Míša K.",
-    description: "Its tongue has highly developed nerves that extend to the very tip, allowing for precise movement. Twice the length of its body, it can freely twist around to catch prey. Its licks cause a tingling sensation. Nemesis of all food.",
-    image: "karlmoni/kodad.png",
-    type: "Electric"
-  },
-  {
-    number: "005",
-    name: "Kuba Ž.",
-    description: "For no reason, Magicarp jumps and splashes about, making it easy for predators like PIDGEOTTO to catch it mid-jump. This behavior prompted scientists to skip research into it. Therefore we don't know surely if Slovak form is any different.", 
-    image: "karlmoni/jakub.png",
-    type: "Water"
-  },
-  {
-    number: "006",
-    name: "Manka",
-    description: "Mmmmmm, lets get some chocolate and see what can do. People say, that with enought chocolate or gummy bears can spread wing and become butterfly.",
-    image: "karlmoni/manka.png",
-    type: "Bug/Grass"
-  },
-  {
-    number: "007",
-    name: "Jarek Požár",
-    description: "Dance form of Blaziken has incredibly strong legs - it can easily clear a 30-story building in one leap. This POKéMON’s blazing punches leave its foes scorched and blackened. Evolving from Blaziken after winning dancing contest while musicaly accompanimented by emmo-music.",
-    image: "karlmoni/Jarek.png",
-    type: "Fire/Fighting"
-  },
-  {
-    number: "008",
-    name: "Dalibor",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
-  },
-  {
-    number: "009",
-    name: "Honza P.",
-    description: "Pony ta is very weak at birth. It can barely stand up. This Kárlmon becomes stronger by stumbling and falling to keep up with Plzeň.",
-    image: "karlmoni/ponic.png",
-    type: "Fire"
-  },
-  {
-    number: "010",
-    name: "Hans B.",
-    description: "At first sight this creature doesn't seem much alive due to his wooden-box visuals and scrunchy movements but could move surprisingly fast.",
-    image: "karlmoni/benda.png",
-    type: "Pending"
-  },
-  {
-    number: "011",
-    name: "Eša",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
-  },
-  {
-    number: "012",
-    name: "Bianka",
-    description: "For no reason, Magicarp jumps and splashes about, making it easy for predators like PIDGEOTTO to catch it mid-jump. This behavior prompted scientists to skip research into it. Therefore we don't know surely if Slovak form is any different.", 
-    image: "karlmoni/slovakmon.png",
-    type: "Water"
-  },
-  {
-    number: "013",
-    name: "Jarda P.",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
-  },
-  {
-    number: "014",
-    name: "Martin Švanda",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
-  },
-  {
-    number: "015",
-    name: "Jirka K.",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
-  },
-  {
-    number: "016",
-    name: "'Péčko' Z.",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
-  },
-  {
-    number: "017",
-    name: "Tom Dvořák",
-    description: "This one looks harmless and is harmless, besides obliterating you in chess, making a killer excel sheet and destroying you with memes. Alright, not so harmless afterall.",
-    image: "karlmoni/tom2.png",
-    type: "Bug"
-  },
-  {
-    number: "018",
-    name: "Fofík",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
-  },
-  {
-    number: "019",
-    name: "Markét L.",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
-  },
-  {
-    number: "020",
-    name: "Evžen",
-    description: "What are any of us doing here? Whether get your question right or wrong, free will is an illusion. Are we playing in Evžen movie, or is Evžen movie playing us?",
-    image: "karlmoni/evzen.png",
-    type: "Not Normal"
-  },
-  {
-    number: "021",
-    name: "Bambi",
-    description: "Though gentle by nature, it believes that to fight fires, there has to be fire in first place. Don't be fooled by it cuteness. This Kárlmon creates small flames in its fists to protect forests from greater threats.",
-    image: "karlmoni/bambi.png",
-    type: "Engineer"
-  },
-  {
-    number: "022",
-    name: "Barča Ž.",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
-  },
-  {
-    number: "023",
-    name: "Puf",
-    description: "Great explorer, but can’t resist petting cats, so basically can be observed on same places. For the sake of specialty food able to walk vast distances in search of rare flavors. Its curiosity knows no limits, often leading it on long treks for a single perfect bite instead of having proper rest and occasional mental tuning.",
-    image: "karlmoni/pufmime.png",
-    type: "Pending"
-  },
-  {
-    number: "024",
-    name: "Kuba Šťastný",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
-  },
-  {
-    number: "025",
-    name: "Akvožu",
-    description: "It's just užovka. It's just spelled backwards. Feeds on ZISK offsprings.",
-    image: "karlmoni/uzovka.png",
-    type: "Poison"
-  },
-  {
-    number: "026",
-    name: "Petr anebo Martin",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
-  },
-  {
-    number: "027",
-    name: "Vojta V.",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
-  },
-  {
-    number: "028",
-    name: "Verča M.",
-    description: "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-    image: "karlmoni/generating.png",
-    type: "Pending"
-  },
-  {
-    number: "150",
-    name: "Fak",
-    description: "Probably a ghost created from leftover scraps of calmness itself. Scientists still don’t know how to interact with this entity safely.",
-    image: "karlmoni/fakomon.png",
-    type: "Dark/Fairy"
-  },
-  {
-    number: "151",
-    name: "Klátra",
-    description: "Born from genetic experiments, Klátra contains more energy than you can handle. Run.",
-    image: "karlmoni/klatra.png",
-    type: "Poison"
-  }
-];
+  const pokemonList: Karlmon[] = karlmons.map((karlmon) => ({
+    //number: karlmon.id.toString().padStart(3, '0'), // Format as 001, 002, etc.
+    id: karlmon.id,
+    name: karlmon.name,
+    description: karlmon.description,
+    image: karlmon.image,
+    type: Array.isArray(karlmon.type)
+      ? (karlmon.type.length === 2 ? karlmon.type.join("/") : karlmon.type[0])
+      : karlmon.type
+  }));
+  console.log("pokemonu: ", pokemonList.length);
 
   const filteredPokemon = pokemonList.filter(pokemon =>
     pokemon.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    pokemon.number.includes(searchTerm)
+    pokemon.id.toString().includes(searchTerm)
   );
 
   return (
@@ -320,12 +155,12 @@ const Karldex: React.FC = () => {
             const gradient = typeColors[pokemon.type] || "from-gray-500 to-gray-700";
             return (
             <div
-              key={pokemon.number}
+              key={pokemon.id}
               className="bg-white rounded-lg shadow-xl overflow-hidden transform transition-all duration-200 hover:scale-105 hover:shadow-2xl cursor-pointer border-4 border-gray-200 hover:border-red-400"
             >
               {/* Pokémon Number Badge */}
               <div className="bg-gradient-to-r from-red-600 to-red-700 text-white px-4 py-2">
-                <span className="font-bold text-lg">#{pokemon.number}</span>
+                <span className="font-bold text-lg">#{pokemon.id}</span>
                 <span
                   className={`float-right px-3 py-1 rounded-full text-white text-sm font-semibold border border-white ${
                     typeColors[pokemon.type] || "bg-gray-500"
