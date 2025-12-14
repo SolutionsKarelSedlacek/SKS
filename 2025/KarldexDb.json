@@ -1,0 +1,314 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "name": "Tadeáš",
+      "description": "A ghost wandering around the world, desperately seeking its nickname, clutching a wrinkled birth certificat bearing only its name. It's the last remnant of its previous lives. Often appears skittish — that’s because echoes of past times still whisper to him.",
+      "image": "karlmoni/tadeas.png",
+      "type": [
+        "Fairy"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Ondra Polák",
+      "description": "A Pokémon that uses its psychic powers for ultimate cooking. It is highly intelligent and capable of instantly identifying its foe’s weakness — such as gluten or histamine. Its final form of Abra evolves from Alakazam using a Cooking Stone. Depending on the stone used in combination, it can evolve into Italian, French, or Vietnamese form.",
+      "image": "karlmoni/ondrapolak.png",
+      "type": [
+        "Psychic",
+        "Fire"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Zuzka Sv.",
+      "description": "It signals its emotions with its melodies. Scientists are studying these melodic patterns. Evolving from Kricketune during sunsets while drinking mountain water in the Beskydy region.",
+      "image": "karlmoni/zuzka.png",
+      "type": [
+        "Bug"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Míša K.",
+      "description": "Its tongue has highly developed nerves that extend to the very tip, allowing for precise movement. Twice the length of its body, it can freely twist around to catch prey. Its licks cause a tingling sensation. Nemesis of all food.",
+      "image": "karlmoni/kodad.png",
+      "type": [
+        "Electric"
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Kuba Ž.",
+      "description": "For no reason, Magicarp jumps and splashes about, making it easy for predators like PIDGEOTTO to catch it mid-jump. This behavior prompted scientists to skip research into it. Therefore we don't know surely if Slovak form is any different.",
+      "image": "karlmoni/jakub.png",
+      "type": [
+        "Water"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Manka",
+      "description": "Mmmmmm, lets get some chocolate and see what can do. People say, that with enought chocolate or gummy bears can spread wing and become butterfly.",
+      "image": "karlmoni/manka.png",
+      "type": [
+        "Bug",
+        "Grass"
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Jarek Požár",
+      "description": "Dance form of Blaziken has incredibly strong legs - it can easily clear a 30-story building in one leap. This POKéMON’s blazing punches leave its foes scorched and blackened. Evolving from Blaziken after winning dancing contest while musicaly accompanimented by emmo-music.",
+      "image": "karlmoni/Jarek.png",
+      "type": [
+        "Fire",
+        "Fighting"
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Dalibor",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 9,
+      "name": "Honza P.",
+      "description": "Pony ta is very weak at birth. It can barely stand up. This Kárlmon becomes stronger by stumbling and falling to keep up with Plzeň.",
+      "image": "karlmoni/ponic.png",
+      "type": [
+        "Fire"
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Hans B.",
+      "description": "At first sight this creature doesn't seem much alive due to his wooden-box visuals and scrunchy movements but could move surprisingly fast.",
+      "image": "karlmoni/benda.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Eša",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Bianka",
+      "description": "For no reason, Magicarp jumps and splashes about, making it easy for predators like PIDGEOTTO to catch it mid-jump. This behavior prompted scientists to skip research into it. Therefore we don't know surely if Slovak form is any different.",
+      "image": "karlmoni/slovakmon.png",
+      "type": [
+        "Water"
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Jarda P.",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 14,
+      "name": "Martin Švanda",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 15,
+      "name": "Jirka K.",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 16,
+      "name": "'Péčko' Z.",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 17,
+      "name": "Tom Dvořák",
+      "description": "This one looks harmless and is harmless, besides obliterating you in chess, making a killer excel sheet and destroying you with memes. Alright, not so harmless afterall.",
+      "image": "karlmoni/tom2.png",
+      "type": [
+        "Bug"
+      ]
+    },
+    {
+      "id": 18,
+      "name": "Fofík",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 19,
+      "name": "Markét L.",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 20,
+      "name": "Evžen",
+      "description": "What are any of us doing here? Whether get your question right or wrong, free will is an illusion. Are we playing in Evžen movie, or is Evžen movie playing us?",
+      "image": "karlmoni/evzen.png",
+      "type": [
+        "Not Normal"
+      ]
+    },
+    {
+      "id": 21,
+      "name": "Bambi",
+      "description": "Though gentle by nature, it believes that to fight fires, there has to be fire in first place. Don't be fooled by it cuteness. This Kárlmon creates small flames in its fists to protect forests from greater threats.",
+      "image": "karlmoni/bambi.png",
+      "type": [
+        "Engineer"
+      ]
+    },
+    {
+      "id": 22,
+      "name": "Barča Ž.",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 23,
+      "name": "Puf",
+      "description": "Great explorer, but can’t resist petting cats, so basically can be observed on same places. For the sake of specialty food able to walk vast distances in search of rare flavors. Its curiosity knows no limits, often leading it on long treks for a single perfect bite instead of having proper rest and occasional mental tuning.",
+      "image": "karlmoni/pufmime.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 24,
+      "name": "Kuba Šťastný",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 25,
+      "name": "Akvožu",
+      "description": "It's just užovka. It's just spelled backwards. Feeds on ZISK offsprings.",
+      "image": "karlmoni/uzovka.png",
+      "type": [
+        "Poison"
+      ]
+    },
+    {
+      "id": 26,
+      "name": "Petr anebo Martin",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 27,
+      "name": "Vojta V.",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 28,
+      "name": "Verča M.",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 29,
+      "name": "Eliška M.",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Kačka Wok.",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 31,
+      "name": "Borek Požár",
+      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
+      "image": "karlmoni/generating.png",
+      "type": [
+        "Pending"
+      ]
+    },
+    {
+      "id": 32,
+      "name": "Věra Dvořáková",
+      "description": "So, u wanna do reports? Report this description.",
+      "image": "karlmoni/vera.png",
+      "type": [
+        "Normal"
+      ]
+    },
+    {
+      "id": 150,
+      "name": "Fak",
+      "description": "Probably a ghost created from leftover scraps of calmness itself. Scientists still don’t know how to interact with this entity safely.",
+      "image": "karlmoni/fakomon.png",
+      "type": [
+        "Dark",
+        "Fairy"
+      ]
+    },
+    {
+      "id": 151,
+      "name": "Klátra",
+      "description": "Born from genetic experiments, Klátra contains more energy than you can handle. Run.",
+      "image": "karlmoni/klatra.png",
+      "type": [
+        "Poison"
+      ]
+    }
+  ]
+}
