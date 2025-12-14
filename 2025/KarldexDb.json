@@ -15,8 +15,8 @@
       "description": "A Pokémon that uses its psychic powers for ultimate cooking. It is highly intelligent and capable of instantly identifying its foe’s weakness — such as gluten or histamine. Its final form of Abra evolves from Alakazam using a Cooking Stone. Depending on the stone used in combination, it can evolve into Italian, French, or Vietnamese form.",
       "image": "karlmoni/ondrapolak.png",
       "type": [
-        "Psychic",
-        "Fire"
+        "Fire",
+        "Psychic"
       ]
     },
     {
@@ -62,17 +62,18 @@
       "description": "Dance form of Blaziken has incredibly strong legs - it can easily clear a 30-story building in one leap. This POKéMON’s blazing punches leave its foes scorched and blackened. Evolving from Blaziken after winning dancing contest while musicaly accompanimented by emmo-music.",
       "image": "karlmoni/Jarek.png",
       "type": [
-        "Fire",
-        "Fighting"
+        "Fighting",
+        "Fire"
       ]
     },
     {
       "id": 8,
       "name": "Dalibor",
-      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-      "image": "karlmoni/generating.png",
+      "description": "Blazing sunlight of Brno has brought out the true form and powers of this Kárlmon. This is the result. It swings its long neck like a whip and smacks its opponents. This makes it itself dizzy, too.",
+      "image": "karlmoni/dalibor.png",
       "type": [
-        "Pending"
+        "Dragon",
+        "Grass"
       ]
     },
     {
@@ -90,7 +91,7 @@
       "description": "At first sight this creature doesn't seem much alive due to his wooden-box visuals and scrunchy movements but could move surprisingly fast.",
       "image": "karlmoni/benda.png",
       "type": [
-        "Pending"
+        "Normal"
       ]
     },
     {
@@ -231,10 +232,10 @@
     {
       "id": 26,
       "name": "Petr anebo Martin",
-      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-      "image": "karlmoni/generating.png",
+      "description": "This Kárlmon wears the skull of its deceased motherand frisbee of its murdered playmate. When  Petr anebo Martin is free, you  should pass it to him. Sometimes it's dreams make it cry, but each tear  sheded,  makes it stronger.",
+      "image": "karlmoni/metr.png",
       "type": [
-        "Pending"
+        "Ground"
       ]
     },
     {
@@ -258,10 +259,10 @@
     {
       "id": 29,
       "name": "Eliška M.",
-      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-      "image": "karlmoni/generating.png",
+      "description": "They live together in a skulk, helping one another. Before eating their prey, they freeze it solid with their –58 degree Fahrenheit breath.",
+      "image": "karlmoni/meliska.png",
       "type": [
-        "Pending"
+        "Ice"
       ]
     },
     {
@@ -289,6 +290,15 @@
       "image": "karlmoni/vera.png",
       "type": [
         "Normal"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "This is test pokemon",
+      "description": "Problém není na vysílačích.",
+      "image": "karlmoni/test.png",
+      "type": [
+        "Corrupted data"
       ]
     },
     {
