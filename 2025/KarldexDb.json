@@ -241,10 +241,11 @@
     {
       "id": 27,
       "name": "Vojta V.",
-      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-      "image": "karlmoni/generating.png",
+      "description": "An ancient Kárlmon that is indistinguishable from a fossil.  Because some of them manage to escape after being waken up into the wild by people, this species is becoming a problem.",
+      "image": "karlmoni/vv.png",
       "type": [
-        "Pending"
+        "Rock",
+        "Water"
       ]
     },
     {
