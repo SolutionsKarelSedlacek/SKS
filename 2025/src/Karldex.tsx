@@ -48,7 +48,8 @@ export function useKarlmons() {
       try {
         console.log("Starting fetch...");
         // const res = await fetch("http://100.117.27.39:8001/data")
-        const res = await fetch("/SKS/2025/KarldexDb.json");
+        // const res = await fetch("/SKS/2025/KarldexDb.json");
+        const res = await fetch("KarldexDb.json");
         console.log("Response status:", res.status, res.ok);
         console.log(res);
         
