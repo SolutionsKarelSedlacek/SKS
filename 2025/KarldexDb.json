@@ -294,10 +294,10 @@
     {
       "id": 33,
       "name": "This is test pokemon",
-      "description": "idk desc",
+      "description": "Problém není na vysílačích.",
       "image": "karlmoni/test.png",
       "type": [
-        "Pending"
+        "Corrupted data"
       ]
     },
     {
