@@ -69,10 +69,11 @@
     {
       "id": 8,
       "name": "Dalibor",
-      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-      "image": "karlmoni/generating.png",
+      "description": "Blazing sunlight of Brno has brought out the true form and powers of this Kárlmon. This is the result. It swings its long neck like a whip and smacks its opponents. This makes it itself dizzy, too.",
+      "image": "karlmoni/dalibor.png",
       "type": [
-        "Pending"
+        "Dragon",
+        "Grass"
       ]
     },
     {
