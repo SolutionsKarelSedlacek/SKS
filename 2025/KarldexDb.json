@@ -295,7 +295,7 @@
       "id": 33,
       "name": "This is test pokemon",
       "description": "idk4",
-      "image": "test.png",
+      "image": "karlmoni/test.png",
       "type": [
         "Pending"
       ]
