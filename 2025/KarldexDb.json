@@ -15,8 +15,8 @@
       "description": "A Pokémon that uses its psychic powers for ultimate cooking. It is highly intelligent and capable of instantly identifying its foe’s weakness — such as gluten or histamine. Its final form of Abra evolves from Alakazam using a Cooking Stone. Depending on the stone used in combination, it can evolve into Italian, French, or Vietnamese form.",
       "image": "karlmoni/ondrapolak.png",
       "type": [
-        "Psychic",
-        "Fire"
+        "Fire",
+        "Psychic"
       ]
     },
     {
@@ -62,8 +62,8 @@
       "description": "Dance form of Blaziken has incredibly strong legs - it can easily clear a 30-story building in one leap. This POKéMON’s blazing punches leave its foes scorched and blackened. Evolving from Blaziken after winning dancing contest while musicaly accompanimented by emmo-music.",
       "image": "karlmoni/Jarek.png",
       "type": [
-        "Fire",
-        "Fighting"
+        "Fighting",
+        "Fire"
       ]
     },
     {
@@ -289,6 +289,15 @@
       "image": "karlmoni/vera.png",
       "type": [
         "Normal"
+      ]
+    },
+    {
+      "id": 33,
+      "name": "This is test pokemon",
+      "description": "idk4",
+      "image": "test.png",
+      "type": [
+        "Pending"
       ]
     },
     {
