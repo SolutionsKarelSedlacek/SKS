@@ -97,10 +97,11 @@
     {
       "id": 11,
       "name": "Eša",
-      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-      "image": "karlmoni/generating.png",
+      "description": "Its strange cries sound like human language. There are some musicians who compose songs for Jynx to sing. Team Rocket is convinced that Jynx really is Santa Claus and Jessie wants revenge from something that happened in her childhood.",
+      "image": "karlmoni/esa.png",
       "type": [
-        "Pending"
+        "Ice",
+        "Psychic"
       ]
     },
     {
@@ -278,7 +279,7 @@
     {
       "id": 31,
       "name": "Borek Požár",
-      "description": "Arcanine isn't what did u expect? I don't know, what is your problem.  This legendary Kárlmon is considered magnificent. Arcanine is known for its high speed. It is said to be capable of running over 6,200 miles in a single day and night. The fire that blazes wildly within this Pokémon's body is its source of power.",
+      "description": "Arcanine isn't what did u expected? I don't know, what is your problem.  This legendary Kárlmon is considered magnificent. Arcanine is known for its high speed. It is said to be capable of running over 6,200 miles in a single day and night. The fire that blazes wildly within this Pokémon's body is its source of power.",
       "image": "karlmoni/borek.png",
       "type": [
         "Fire"
