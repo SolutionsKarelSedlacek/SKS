@@ -116,10 +116,10 @@
     {
       "id": 13,
       "name": "Jarda P.",
-      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-      "image": "karlmoni/generating.png",
+      "description": "Puts enemies to sleep then eats their dreams.  He said he doesn't have nose like that. Occasionally gets sick from eating bad dreams. Try eat mine.",
+      "image": "karlmoni/jarda.png",
       "type": [
-        "Pending"
+        "Psychic"
       ]
     },
     {
