@@ -143,10 +143,11 @@
     {
       "id": 16,
       "name": "'Péčko' Z.",
-      "description": "Pendingimage is not kárlmon, its just substitute image before proper image is generated. Karlservers are busy right now. If Kárldex user has hunch how final image should be generated, please contact maintainers of Kárldex.",
-      "image": "karlmoni/generating.png",
+      "description": "Because its body is almost entirely composed of water, it shrivels up if it is washed ashore.",
+      "image": "karlmoni/patrik.png",
       "type": [
-        "Pending"
+        "Poison",
+        "Water"
       ]
     },
     {
