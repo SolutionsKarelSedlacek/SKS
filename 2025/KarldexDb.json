@@ -305,6 +305,15 @@
       ]
     },
     {
+      "id": 34,
+      "name": "Patrik z Plzně",
+      "description": "Je z Plzně.",
+      "image": "karlmoni/zplzne.png",
+      "type": [
+        "Water"
+      ]
+    },
+    {
       "id": 150,
       "name": "Fak",
       "description": "Probably a ghost created from leftover scraps of calmness itself. Scientists still don’t know how to interact with this entity safely.",
