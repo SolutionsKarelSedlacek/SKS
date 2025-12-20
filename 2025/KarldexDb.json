@@ -314,6 +314,24 @@
       ]
     },
     {
+      "id": 35,
+      "name": "Lucka Z.",
+      "description": "You can’t stuff a paper box with the smell of rain just before it falls, or the exact weight of silence after someone says your name and means it. You can’t fold regret neatly into corners, or tape shut the moment when a joke goes too far and everyone knows it. A box won’t hold the echo of a childhood room you haven’t seen in years, nor the way time stretches at 3 a.m. when sleep refuses to show up.",
+      "image": "karlmoni/krabice.png",
+      "type": [
+        "Psychic"
+      ]
+    },
+    {
+      "id": 36,
+      "name": "Dláža",
+      "description": "Dog went into the forest and met a pavement Kárlmon.",
+      "image": "karlmoni/dlaza.png",
+      "type": [
+        "Normal"
+      ]
+    },
+    {
       "id": 150,
       "name": "Fak",
       "description": "Probably a ghost created from leftover scraps of calmness itself. Scientists still don’t know how to interact with this entity safely.",
