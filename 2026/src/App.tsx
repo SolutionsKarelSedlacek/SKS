@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import InfoPage from './InfoPage';
+import NaseHvezdyPage from './NaseHvezdyPage';
 
 const publicBaseUrl = process.env.PUBLIC_URL || '';
 const hero = `${publicBaseUrl}/karel.png`;
@@ -12,11 +13,13 @@ const discordUrl = 'https://discord.gg/34mxUjXMF6';
 const regUrl = 'https://forms.gle/KtAXmtLjXV3k5EzT8';
 
 const SilvesterPage: React.FC = () => {
-  const [page, setPage] = useState<'home' | 'info'>('home');
+  const [page, setPage] = useState<'home' | 'info' | 'stars'>('home');
   const [isDiscordHovered, setIsDiscordHovered] = useState(false);
 
+  const heroClassName = page === 'home' ? 'hero' : 'hero hero-info-open';
+
   return (
-    <div className="hero" style={{ backgroundImage: `url(${background})` }}>
+    <div className={heroClassName} style={{ backgroundImage: `url(${background})` }}>
       {page === 'home' ? (
         <>
           <img src={hero} alt="Karel Sedláček" className="hero-img" />
@@ -69,8 +72,13 @@ const SilvesterPage: React.FC = () => {
             </div>
           </div>
         </>
+      ) : page === 'info' ? (
+        <InfoPage
+          onBack={() => setPage('home')}
+          onOpenStars={() => setPage('stars')}
+        />
       ) : (
-        <InfoPage onBack={() => setPage('home')} />
+        <NaseHvezdyPage onBack={() => setPage('home')} />
       )}
     </div>
   );
