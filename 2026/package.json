@@ -1,7 +1,7 @@
 {
   "name": "2026",
   "version": "0.1.0",
-  "homepage": "https://solutionskarelsedlacek.github.io/SKS/2026",
+  "homepage": "https://solutionskarelsedlacek.github.io/SKS/2026/",
   "private": true,
   "dependencies": {
     "18": "0.0.0",
@@ -13,6 +13,7 @@
     "@types/node": "^16.18.126",
     "@types/react": "^19.1.14",
     "@types/react-dom": "^19.1.9",
+    "gh-pages": "^6.3.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-scripts": "5.0.1",
