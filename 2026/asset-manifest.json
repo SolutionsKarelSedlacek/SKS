@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/SKS/2026_beta/static/css/main.c434de11.css",
+    "main.js": "/SKS/2026_beta/static/js/main.f09830a9.js",
+    "static/js/453.9fd96d07.chunk.js": "/SKS/2026_beta/static/js/453.9fd96d07.chunk.js",
+    "static/media/Overpass800Merged.woff2": "/SKS/2026_beta/static/media/Overpass800Merged.1cdc859460dc039824f2.woff2",
+    "static/media/Overpass700Merged.woff2": "/SKS/2026_beta/static/media/Overpass700Merged.8044cd67ceb50acfe164.woff2",
+    "index.html": "/SKS/2026_beta/index.html",
+    "main.c434de11.css.map": "/SKS/2026_beta/static/css/main.c434de11.css.map",
+    "main.f09830a9.js.map": "/SKS/2026_beta/static/js/main.f09830a9.js.map",
+    "453.9fd96d07.chunk.js.map": "/SKS/2026_beta/static/js/453.9fd96d07.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c434de11.css",
+    "static/js/main.f09830a9.js"
+  ]
+}
