@@ -5,7 +5,6 @@ import NaseHvezdyPage from './NaseHvezdyPage';
 
 const publicBaseUrl = process.env.PUBLIC_URL || '';
 const hero = `${publicBaseUrl}/karel.png`;
-const background = `${publicBaseUrl}/background.png`;
 const discord = `${publicBaseUrl}/discord.svg`;
 const discordHover = `${publicBaseUrl}/discord2.svg`;
 
@@ -19,7 +18,7 @@ const SilvesterPage: React.FC = () => {
   const heroClassName = page === 'home' ? 'hero' : 'hero hero-info-open';
 
   return (
-    <div className={heroClassName} style={{ backgroundImage: `url(${background})` }}>
+    <div className={heroClassName}>
       {page === 'home' ? (
         <>
           <img src={hero} alt="Karel Sedláček" className="hero-img" />
