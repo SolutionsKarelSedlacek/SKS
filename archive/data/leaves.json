@@ -1,0 +1,529 @@
+[
+  {
+    "id": "root",
+    "title": "SKS Universe",
+    "intro": "The Karlverse. Start here.",
+    "img": "img/node-01.svg",
+    "tag": "ROOT",
+    "connections": [
+      "test_root",
+      "sks24",
+      "sks25"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "heading": "About this year",
+        "body": "Placeholder overview copy. Describe what this year's event is, who it's for, and why it matters."
+      }
+    ]
+  },
+  {
+    "id": "test_root",
+    "title": "Dummy Root",
+    "intro": "The dummy branch. Start here.",
+    "img": "img/node-01.svg",
+    "tag": "DUMMYROOT",
+    "connections": [
+      "arrival",
+      "keynote",
+      "workshop-a",
+      "social"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "heading": "About this year",
+        "body": "Placeholder overview copy. Describe what this year's event is, who it's for, and why it matters."
+      }
+    ]
+  },
+  {
+    "id": "sks24",
+    "title": "SKS // 2024",
+    "intro": "Romeo a Karel.",
+    "img": "img/karel.png",
+    "tag": "SKS",
+    "connections": [],
+    "content": [
+      {
+        "type": "text",
+        "heading": "About this year",
+        "body": "Placeholder overview copy. Describe what this year's event is, who it's for, and why it matters."
+      }
+    ]
+  },
+  {
+    "id": "sks25",
+    "title": "SKS // 2025",
+    "intro": "Karlmoni",
+    "img": "img/karlball.png",
+    "tag": "SKS",
+    "connections": [
+      "karlopolis-1",
+      "node-1788735392885"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "heading": "About this year",
+        "body": "Placeholder overview copy. Describe what this year's event is, who it's for, and why it matters."
+      }
+    ]
+  },
+  {
+    "id": "arrival",
+    "title": "Arrival & Check-in",
+    "intro": "Doors open, badges collected, first coffee.",
+    "img": "img/node-02.svg",
+    "tag": "LOGISTICS",
+    "connections": [
+      "test_root",
+      "keynote"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "heading": "Details",
+        "body": "Placeholder: doors open time, address, what to bring, how registration works."
+      },
+      {
+        "type": "pdf",
+        "heading": "Venue map",
+        "file": "pdfs/dossier-01.pdf",
+        "label": "Download venue map (PDF)"
+      }
+    ]
+  },
+  {
+    "id": "keynote",
+    "title": "Opening Keynote",
+    "intro": "The talk that sets the tone for the day.",
+    "img": "img/node-03.svg",
+    "tag": "MAIN STAGE",
+    "connections": [
+      "test_root",
+      "arrival",
+      "workshop-a",
+      "workshop-b"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "heading": "Synopsis",
+        "body": "Placeholder synopsis of the keynote. Swap in the real abstract and speaker bio."
+      },
+      {
+        "type": "video",
+        "heading": "Teaser",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+        "label": "Watch the teaser"
+      }
+    ]
+  },
+  {
+    "id": "workshop-a",
+    "title": "Workshop: Track A",
+    "intro": "Hands-on session, first breakout track.",
+    "img": "img/node-04.svg",
+    "tag": "BREAKOUT",
+    "connections": [
+      "test_root",
+      "keynote",
+      "workshop-b"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "heading": "What you'll do",
+        "body": "Placeholder workshop description, prerequisites, and what to bring."
+      },
+      {
+        "type": "pdf",
+        "heading": "Handout",
+        "file": "pdfs/dossier-02.pdf",
+        "label": "Download workshop handout (PDF)"
+      }
+    ]
+  },
+  {
+    "id": "workshop-b",
+    "title": "Workshop: Track B",
+    "intro": "Hands-on session, second breakout track.",
+    "img": "img/node-05.svg",
+    "tag": "BREAKOUT",
+    "connections": [
+      "keynote",
+      "workshop-a",
+      "panel"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "body": "Placeholder workshop description for track B."
+      }
+    ]
+  },
+  {
+    "id": "panel",
+    "title": "Panel Discussion",
+    "intro": "Open floor, moderated conversation.",
+    "img": "img/node-06.svg",
+    "tag": "MAIN STAGE",
+    "connections": [
+      "workshop-b",
+      "lunch",
+      "closing"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "heading": "Panelists",
+        "body": "Placeholder panelist list and discussion topics."
+      },
+      {
+        "type": "video",
+        "embedUrl": "https://player.vimeo.com/video/76979871",
+        "label": "Watch last year's panel"
+      }
+    ]
+  },
+  {
+    "id": "lunch",
+    "title": "Lunch & Networking",
+    "intro": "Food, informal conversation, breathing room.",
+    "img": "img/node-07.svg",
+    "tag": "LOGISTICS",
+    "connections": [
+      "panel",
+      "social"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "body": "Placeholder: menu notes, dietary options, where to sit."
+      }
+    ]
+  },
+  {
+    "id": "social",
+    "title": "Evening Social",
+    "intro": "Closing hours, informal and unrecorded.",
+    "img": "img/node-08.svg",
+    "tag": "SOCIAL",
+    "connections": [
+      "test_root",
+      "lunch",
+      "closing"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "body": "Placeholder: location, dress code (if any), end time."
+      }
+    ]
+  },
+  {
+    "id": "closing",
+    "title": "Closing Remarks",
+    "intro": "The last word before everyone scatters.",
+    "img": "img/node-09.svg",
+    "tag": "MAIN STAGE",
+    "connections": [
+      "panel",
+      "social"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "body": "Placeholder closing remarks summary and thanks."
+      },
+      {
+        "type": "video",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+      }
+    ]
+  },
+  {
+    "id": "archive",
+    "title": "Past Editions",
+    "intro": "What came before this year.",
+    "img": "img/node-10.svg",
+    "tag": "ARCHIVE",
+    "connections": [
+      "test_root"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "heading": "History",
+        "body": "Placeholder: short recap of previous years, with links or dates."
+      }
+    ]
+  },
+  {
+    "id": "contact",
+    "title": "Contact & Press",
+    "intro": "How to reach the organizers.",
+    "img": "img/node-11.svg",
+    "tag": "INFO",
+    "connections": [
+      "test_root",
+      "archive"
+    ],
+    "content": [
+      {
+        "type": "text",
+        "body": "Placeholder: email address, press kit link, social handles."
+      }
+    ]
+  },
+  {
+    "id": "last_message",
+    "title": "Last Message",
+    "intro": "Karel musí jednat",
+    "img": "img/karel.png",
+    "tag": "ARCHIVE",
+    "sks": "sks25",
+    "connections": [
+      "karlopolis-3"
+    ],
+    "content": [
+      {
+        "type": "video",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/D9oLRoG8Jo4",
+        "label": ""
+      }
+    ]
+  },
+  {
+    "id": "karlopolis-1",
+    "title": "Karlopolis — Vol 1",
+    "intro": "Newspaper Karlopolis — issue 1",
+    "img": "pdfs/newspaper_karlopolis/Karlopolis_vol1-1.png",
+    "tag": "ARCHIVE",
+    "connections": [
+      "karlopolis-2"
+    ],
+    "content": [
+      {
+        "type": "pdf",
+        "heading": "Issue 1",
+        "file": "pdfs/newspaper_karlopolis/Karlopolis_vol1.pdf",
+        "label": "Download Karlopolis vol 1 (PDF)"
+      }
+    ]
+  },
+  {
+    "id": "karlopolis-2",
+    "title": "Karlopolis — Vol 2",
+    "intro": "Newspaper Karlopolis — issue 2",
+    "img": "pdfs/newspaper_karlopolis/Karlopolis_vol2-1.png",
+    "tag": "ARCHIVE",
+    "connections": [
+      "last_message"
+    ],
+    "content": [
+      {
+        "type": "pdf",
+        "heading": "Issue 2",
+        "file": "pdfs/newspaper_karlopolis/Karlopolis_vol2.pdf",
+        "label": "Download Karlopolis vol 2 (PDF)"
+      }
+    ]
+  },
+  {
+    "id": "karlopolis-3",
+    "title": "Karlopolis — Vol 3",
+    "intro": "Newspaper Karlopolis — issue 3",
+    "img": "pdfs/newspaper_karlopolis/Karlopolis_vol3-1.png",
+    "tag": "ARCHIVE",
+    "connections": [
+      "karlopolis-4",
+    ],
+    "content": [
+      {
+        "type": "pdf",
+        "heading": "Issue 3",
+        "file": "pdfs/newspaper_karlopolis/Karlopolis_vol3.pdf",
+        "label": "Download Karlopolis vol 3 (PDF)"
+      }
+    ]
+  },
+  {
+    "id": "karlopolis-4",
+    "title": "Karlopolis — Vol 4",
+    "intro": "Newspaper Karlopolis — issue 4",
+    "img": "pdfs/newspaper_karlopolis/Karlopolis_vol4-1.png",
+    "tag": "ARCHIVE",
+    "group": "karlopolis-4-9-group",
+    "groupLabel": "Karlopolis — Vol 4–9",
+    "connections": [
+      "karlopolis-5"
+    ],
+    "content": [
+      {
+        "type": "pdf",
+        "heading": "Issue 4",
+        "file": "pdfs/newspaper_karlopolis/Karlopolis_vol4.pdf",
+        "label": "Download Karlopolis vol 4 (PDF)"
+      }
+    ]
+  },
+  {
+    "id": "karlopolis-5",
+    "title": "Karlopolis — Vol 5",
+    "intro": "Newspaper Karlopolis — issue 5",
+    "img": "pdfs/newspaper_karlopolis/Karlopolis_vol5-1.png",
+    "tag": "ARCHIVE",
+    "group": "karlopolis-4-9-group",
+    "groupLabel": "Karlopolis — Vol 4–9",
+    "connections": [
+      "karlopolis-6"
+    ],
+    "content": [
+      {
+        "type": "pdf",
+        "heading": "Issue 5",
+        "file": "pdfs/newspaper_karlopolis/Karlopolis_vol5.pdf",
+        "label": "Download Karlopolis vol 5 (PDF)"
+      }
+    ]
+  },
+  {
+    "id": "karlopolis-6",
+    "title": "Karlopolis — Vol 6",
+    "intro": "Newspaper Karlopolis — issue 6",
+    "img": "pdfs/newspaper_karlopolis/Karlopolis_vol6-1.png",
+    "tag": "ARCHIVE",
+    "group": "karlopolis-4-9-group",
+    "groupLabel": "Karlopolis — Vol 4–9",
+    "connections": [
+      "karlopolis-7"
+    ],
+    "content": [
+      {
+        "type": "pdf",
+        "heading": "Issue 6",
+        "file": "pdfs/newspaper_karlopolis/Karlopolis_vol6.pdf",
+        "label": "Download Karlopolis vol 6 (PDF)"
+      }
+    ]
+  },
+  {
+    "id": "karlopolis-7",
+    "title": "Karlopolis — Vol 7",
+    "intro": "Newspaper Karlopolis — issue 7",
+    "img": "pdfs/newspaper_karlopolis/Karlopolis_vol7-1.png",
+    "tag": "ARCHIVE",
+    "group": "karlopolis-4-9-group",
+    "groupLabel": "Karlopolis — Vol 4–9",
+    "connections": [
+      "karlopolis-8"
+    ],
+    "content": [
+      {
+        "type": "pdf",
+        "heading": "Issue 7",
+        "file": "pdfs/newspaper_karlopolis/Karlopolis_vol7.pdf",
+        "label": "Download Karlopolis vol 7 (PDF)"
+      }
+    ]
+  },
+  {
+    "id": "karlopolis-8",
+    "title": "Karlopolis — Vol 8",
+    "intro": "Newspaper Karlopolis — issue 8",
+    "img": "pdfs/newspaper_karlopolis/Karlopolis_vol8-1.png",
+    "tag": "ARCHIVE",
+    "group": "karlopolis-4-9-group",
+    "groupLabel": "Karlopolis — Vol 4–9",
+    "connections": [
+      "karlopolis-9"
+    ],
+    "content": [
+      {
+        "type": "pdf",
+        "heading": "Issue 8",
+        "file": "pdfs/newspaper_karlopolis/Karlopolis_vol8.pdf",
+        "label": "Download Karlopolis vol 8 (PDF)"
+      }
+    ]
+  },
+  {
+    "id": "karlopolis-9",
+    "title": "Karlopolis — Vol 9",
+    "intro": "Newspaper Karlopolis — issue 9",
+    "img": "pdfs/newspaper_karlopolis/Karlopolis_vol9-1.png",
+    "tag": "ARCHIVE",
+    "group": "karlopolis-4-9-group",
+    "groupLabel": "Karlopolis — Vol 4–9",
+    "connections": [
+      "karlopolis-10"
+    ],
+    "content": [
+      {
+        "type": "pdf",
+        "heading": "Issue 9",
+        "file": "pdfs/newspaper_karlopolis/Karlopolis_vol9.pdf",
+        "label": "Download Karlopolis vol 9 (PDF)"
+      }
+    ]
+  },
+  {
+    "id": "karlopolis-10",
+    "title": "Karlopolis — Vol 10",
+    "intro": "Newspaper Karlopolis — issue 10",
+    "img": "pdfs/newspaper_karlopolis/Karlopolis_vol10-1.png",
+    "tag": "ARCHIVE",
+    "connections": [
+      "node-1788739602851"
+    ],
+    "content": [
+      {
+        "type": "pdf",
+        "heading": "Issue 10",
+        "file": "pdfs/newspaper_karlopolis/Karlopolis_vol10.pdf",
+        "label": "Download Karlopolis vol 10 (PDF)"
+      }
+    ]
+  },
+  {
+    "id": "node-1788735392885",
+    "title": "New node",
+    "intro": "Intro",
+    "img": "",
+    "tag": "ARCHIVE",
+    "connections": [
+    ],
+    "content": [
+      {
+        "type": "video",
+        "embedUrl": "https://www.youtube-nocookie.com/embed/D9oLRoG8Jo4",
+        "label": ""
+      }
+    ]
+  },
+  {
+    "id": "node-1788739602851",
+    "title": "raketaci kradou vanoce",
+    "intro": "raketaci kradou vanoce",
+    "img": "",
+    "tag": "",
+    "sks": "sks25",
+    "connections": [
+      "node-1788740099229"
+    ],
+    "content": []
+  },
+  {
+    "id": "node-1788740099229",
+    "title": "karel back in action",
+    "intro": "karel se vraci",
+    "img": "img/karel.png",
+    "tag": "Karel",
+    "sks": "sks25",
+    "connections": [],
+    "content": []
+  }
+]
