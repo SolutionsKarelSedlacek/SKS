@@ -74,9 +74,12 @@ const FormPage: React.FC<FormPageProps> = ({ token, onBack, onOpenStars }) => {
       <div className="form-overlay-content">
         <h1 className="hero-title form-title">
           {hasValidLink ? (
+            <div>
             <a href={apiData?.url} target="_blank" rel="noopener noreferrer" className="form-stars-link">
               Zažij Karlopolis
             </a>
+            <p className="hero-dates">Tohle je pozvánka.</p>
+            </div>
           ) : apiData ? (
             <span className="form-stars-link form-stars-link-disabled2">{apiData?.error}</span>
           ) : (

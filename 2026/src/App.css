@@ -169,44 +169,17 @@ body {
   position: relative;
   width: 100%;
   min-height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
   overflow: hidden;
   background: #000;
 }
 
-.people-controls {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: min(90vw, 980px);
-  margin-top: 2rem;
-}
-
-.people-scene {
-  position: relative;
-  width: min(66vw, 760px);
-  aspect-ratio: 1;
-  max-height: 72vh;
-  display: block;
-}
-
-.people-scene img {
+.people-page .hero-img {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  display: block;
-  object-fit: contain;
-  object-position: center;
-  pointer-events: none;
-}
-
-.people-background {
+  object-fit: cover;
+  object-position: 50% 22%;
   z-index: 0;
 }
 
@@ -216,43 +189,86 @@ body {
   transition: transform 0.25s ease;
 }
 
+.people-stage {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90vw, 38rem);
+  height: clamp(8rem, 20vw, 18rem);
+  z-index: 2;
+}
+
 .people-arrow {
   position: absolute;
-  appearance: none;
-  border: 0;
-  background: transparent;
-  color: #f00;
-  font-size: clamp(2.5rem, 5vw, 5rem);
-  line-height: 1;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(3rem, 6vw, 4.25rem);
+  height: clamp(3rem, 6vw, 4.25rem);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.03);
+  color: #f15245;
   cursor: pointer;
-  text-shadow: 0 0 18px rgba(0, 0, 0, 0.8);
-  transition: transform 0.2s ease;
-  margin-top: 72rem;
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
 }
 
 .people-arrow:hover {
-  transform: scale(1.18);
+  transform: translateY(-50%) scale(1.08);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.people-arrow svg {
+  width: 56%;
+  height: 56%;
+  display: block;
 }
 
 .people-arrow-left {
-  margin-right: 10vw;
+  left: 0;
 }
 
 .people-arrow-right {
-  margin-left: 100vw;
+  right: 0;
 }
 
 .people-text {
   position: absolute;
+  left: 50%;
+  bottom: 8%;
+  transform: translateX(-50%);
+  width: min(76vw, 38rem);
+  margin: 0;
   z-index: 2;
-  max-width: min(72vw, 620px);
-  margin-top: 45.5rem;
-  margin-left: 50rem;
   text-align: center;
   color: #f5ecbf;
   font-size: clamp(1rem, 2vw, 1.8rem);
   letter-spacing: 0.08em;
   text-transform: none;
+}
+
+@media (max-width: 640px) {
+  .people-stage {
+    top: 46%;
+    width: min(92vw, 24rem);
+    height: clamp(7rem, 22vw, 12rem);
+  }
+
+  .people-arrow {
+    width: clamp(2.5rem, 12vw, 3.25rem);
+    height: clamp(2.5rem, 12vw, 3.25rem);
+  }
+
+  .people-text {
+    bottom: 5%;
+    width: min(82vw, 24rem);
+    font-size: clamp(0.85rem, 4vw, 1.1rem);
+    letter-spacing: 0.05em;
+  }
 }
 
 .people-back {
@@ -542,6 +558,14 @@ body {
   margin-bottom: 2rem;
 }
 
+.merch-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
 .merch-title {
   margin: 0;
   font-family: 'Highway', 'Arial Narrow', sans-serif;
@@ -565,12 +589,14 @@ body {
 }
 
 .merch-visual {
+  display: block;
   width: 100%;
   height: 220px;
   border-radius: 0.8rem;
-  background: linear-gradient(135deg, rgba(224, 70, 59, 0.85), rgba(255,255,255,0.18));
-  border: 1px solid rgba(255,255,255,0.25);
+  background: #d53a35;
+  border: 1px solid rgba(255, 255, 255, 0.25);
   margin-bottom: 1rem;
+  object-fit: cover;
 }
 
 .merch-name {
