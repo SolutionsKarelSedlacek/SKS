@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="cs">
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting…</title>
+    <script>
+      (function () {
+        const base = '/SKS/2026';
+        const pathname = window.location.pathname;
+        const relative = pathname.startsWith(base) ? pathname.slice(base.length) || '/' : pathname;
+        const redirectPath = relative && relative !== '/' ? relative : '/';
+        const redirectUrl = base + '/?redirect=' + encodeURIComponent(redirectPath);
+        window.location.replace(redirectUrl);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>
