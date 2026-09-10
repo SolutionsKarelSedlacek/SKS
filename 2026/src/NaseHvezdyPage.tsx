@@ -1,12 +1,17 @@
 import React from 'react';
 
+const publicBaseUrl = process.env.PUBLIC_URL || '';
+const hero = `${publicBaseUrl}/karel.png`;
+
 type NaseHvezdyPageProps = {
   onBack: () => void;
 };
 
 const NaseHvezdyPage: React.FC<NaseHvezdyPageProps> = ({ onBack }) => {
   return (
-    <div className="local-page-shell">
+    <div className="local-page-shell page-background">
+      <img src={hero} alt="Karel Sedláček" className="hero-img" />
+
       <div className="local-page-card">
         <button type="button" className="info-back" onClick={onBack} aria-label="Zpět na domovskou stránku">
           ← Zpět

@@ -2,6 +2,10 @@ import React from 'react';
 import { fireEvent, render, screen } from '@testing-library/react';
 import App from './App';
 
+beforeEach(() => {
+  window.history.pushState({}, '', '/');
+});
+
 test('renders the headline', () => {
   render(<App />);
   const headline = screen.getByText(/SILVESTER S KARLEM SEDLÁČKEM/i);
@@ -24,6 +28,35 @@ test('renders the info page with map and chata link', () => {
 
   expect(screen.getByText(/chata klauzovka/i)).toBeInTheDocument();
   expect(screen.getByTitle(/mapa/i)).toBeInTheDocument();
+});
+
+test('keeps the hero background visible when the info page is open', () => {
+  render(<App />);
+
+  fireEvent.click(screen.getByRole('button', { name: /info/i }));
+
+  expect(document.querySelector('.hero-img')).toBeInTheDocument();
+  expect(document.querySelector('.hero')).toBeInTheDocument();
+});
+
+test('loads the form page from a tokenized URL and prints the token', () => {
+  const logSpy = jest.spyOn(console, 'log').mockImplementation(() => undefined);
+  window.history.pushState({}, '', '/form/abcd1234');
+
+  render(<App />);
+
+  expect(screen.getByTestId('form-page')).toBeInTheDocument();
+  expect(logSpy).toHaveBeenCalledWith('form token', 'abcd1234');
+
+  logSpy.mockRestore();
+});
+
+test('opens the Karlopolis people page from the main screen', () => {
+  render(<App />);
+
+  fireEvent.click(screen.getByRole('button', { name: /karlopolis/i }));
+
+  expect(screen.getByText(/Byl jednou jeden karel/i)).toBeInTheDocument();
 });
 
 test('navigates to the local stars page from the info screen', () => {
