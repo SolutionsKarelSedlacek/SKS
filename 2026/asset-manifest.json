@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/SKS/2026/static/css/main.0333da53.css",
-    "main.js": "/SKS/2026/static/js/main.946afc3d.js",
+    "main.css": "/SKS/2026/static/css/main.1969a225.css",
+    "main.js": "/SKS/2026/static/js/main.bc675f5e.js",
     "static/js/453.252eac22.chunk.js": "/SKS/2026/static/js/453.252eac22.chunk.js",
     "static/media/Overpass800Merged.woff2": "/SKS/2026/static/media/Overpass800Merged.1cdc859460dc039824f2.woff2",
     "static/media/Overpass700Merged.woff2": "/SKS/2026/static/media/Overpass700Merged.8044cd67ceb50acfe164.woff2",
     "index.html": "/SKS/2026/index.html",
-    "main.0333da53.css.map": "/SKS/2026/static/css/main.0333da53.css.map",
-    "main.946afc3d.js.map": "/SKS/2026/static/js/main.946afc3d.js.map",
+    "main.1969a225.css.map": "/SKS/2026/static/css/main.1969a225.css.map",
+    "main.bc675f5e.js.map": "/SKS/2026/static/js/main.bc675f5e.js.map",
     "453.252eac22.chunk.js.map": "/SKS/2026/static/js/453.252eac22.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0333da53.css",
-    "static/js/main.946afc3d.js"
+    "static/css/main.1969a225.css",
+    "static/js/main.bc675f5e.js"
   ]
 }
