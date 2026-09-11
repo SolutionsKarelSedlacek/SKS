@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      (function () {
+        var appBase = '/SKS/2026';
+        var l = window.location;
+        var target = l.pathname;
+
+        if (target === '/SKS' || target === '/SKS/' || target === appBase || target === appBase + '/') {
+          window.location.replace(appBase + '/');
+          return;
+        }
+
+        if (target.indexOf(appBase + '/') === 0) {
+          var remainder = target.slice(appBase.length) || '/';
+          window.location.replace(appBase + '/?redirect=' + encodeURIComponent(remainder));
+          return;
+        }
+
+        window.location.replace(appBase + '/');
+      })();
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
