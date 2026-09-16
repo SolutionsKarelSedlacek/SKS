@@ -7,25 +7,12 @@ const background = `${publicBaseUrl}/background.png`;
 const chataUrl = 'https://www.e-chalupy.cz/chalupa-u-alenky-albrechtice-v-jizerskych-horach-pronajem-o16371';
 
 type InfoPageProps = {
-  onBack: () => void;
-  onOpenStars: () => void;
 };
 
-const InfoPage: React.FC<InfoPageProps> = ({ onBack, onOpenStars }) => {
+const InfoPage: React.FC<InfoPageProps> = () => {
   return (
     <div className="info-page page-background">
       <img src={background} alt="background" className="hero-img" />
-
-      <div className="info-top-actions">
-        <button
-          type="button"
-          className="info-back"
-          onClick={onBack}
-          aria-label="Zpět na domovskou stránku"
-        >
-          ← Zpět
-        </button>
-      </div>
 
       <ProgramWidget />
 

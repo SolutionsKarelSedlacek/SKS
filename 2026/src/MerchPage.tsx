@@ -44,10 +44,9 @@ const items: MerchItem[] = [
 ];
 
 type MerchPageProps = {
-  onBack: () => void;
 };
 
-const MerchPage: React.FC<MerchPageProps> = ({ onBack }) => {
+const MerchPage: React.FC<MerchPageProps> = () => {
   return (
     <div className="merch-page page-background">
       <img src={background} alt="background" className="hero-img" />
@@ -56,9 +55,6 @@ const MerchPage: React.FC<MerchPageProps> = ({ onBack }) => {
         <div className="merch-header">
           <h1 className="merch-title">Merch</h1>
           <div className="merch-actions">
-            <button type="button" className="info-back" onClick={onBack} aria-label="Zpět na domovskou stránku">
-              ← Zpět
-            </button>
             <button type="button" className="info-back" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} aria-label="Přejít na seznam výrobků">
               Nakupovat →
             </button>

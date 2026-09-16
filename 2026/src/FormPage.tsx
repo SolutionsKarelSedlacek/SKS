@@ -6,8 +6,7 @@ const apiUrlBase = 'https://script.google.com/macros/s/AKfycbymzsuKrkZvs_XlsVBod
 
 type FormPageProps = {
   token: string;
-  onBack: () => void;
-  onOpenStars: () => void;
+  onBack?: () => void;
 };
 
 type ApiResponse = {
@@ -16,9 +15,8 @@ type ApiResponse = {
   error?: string;
 };
 
-const FormPage: React.FC<FormPageProps> = ({ token, onBack, onOpenStars }) => {
+const FormPage: React.FC<FormPageProps> = ({ token, onBack = () => undefined }) => {
   const [apiData, setApiData] = useState<ApiResponse | null>(null);
-  const [apiText, setApiText] = useState<string>('');
 
   useEffect(() => {
     console.log('form token', token);
@@ -27,7 +25,6 @@ const FormPage: React.FC<FormPageProps> = ({ token, onBack, onOpenStars }) => {
       try {
         const response = await fetch(`${apiUrlBase}?token=${encodeURIComponent(token)}`);
         const text = await response.text();
-        setApiText(text);
 
         try {
           const parsed = JSON.parse(text) as ApiResponse;
@@ -38,7 +35,6 @@ const FormPage: React.FC<FormPageProps> = ({ token, onBack, onOpenStars }) => {
           setApiData(null);
         }
       } catch {
-        setApiText('API call failed.');
         setApiData(null);
       }
     };
@@ -47,6 +43,17 @@ const FormPage: React.FC<FormPageProps> = ({ token, onBack, onOpenStars }) => {
   }, [token]);
 
   const hasValidLink = Boolean(apiData?.valid && apiData.url);
+  const errorCode = apiData?.error?.trim();
+  const formErrorLines = errorCode
+    ? errorCode.toLowerCase() === 'your wife should not meet your mistress'
+      ? [
+          'Už mockrát použitá pozvánka.',
+          'Toto není pozvánka.',
+        ]
+      : errorCode.toLowerCase() === 'not listed'
+        ? ['Ne.', 'Toto není pozvánka.']
+        : [errorCode]
+    : [];
 
   return (
     <div className="form-page" data-testid="form-page">
@@ -81,9 +88,19 @@ const FormPage: React.FC<FormPageProps> = ({ token, onBack, onOpenStars }) => {
             <p className="hero-dates">Tohle je pozvánka.</p>
             </div>
           ) : apiData ? (
-            <span className="form-stars-link form-stars-link-disabled2">{apiData?.error}</span>
+            <div className="form-api-result">
+              {formErrorLines.map((line, index) => (
+                <React.Fragment key={`${line}-${index}`}>
+                  {index === 0 ? (
+                    <div className="form-stars-link form-stars-link-disabled2">{line}</div>
+                  ) : (
+                    <p className="hero-dates">{line}</p>
+                  )}
+                </React.Fragment>
+              ))}
+            </div>
           ) : (
-            <span className="form-stars-link form-stars-link-disabled2">Proroctví se načítá...</span>
+            <span className="form-stars-link form-stars-link-disabled2">Pozvánka se načítá...</span>
           )}
         </h1>
       </div>

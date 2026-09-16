@@ -148,8 +148,8 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 58px;
+  height: 58px;
   transform: translateY(-3px);
   transition: transform 0.2s ease, opacity 0.2s ease;
 }
@@ -165,12 +165,114 @@ body {
   display: block;
 }
 
+@media (max-width: 1024px) {
+  .hero-discord-link {
+    width: 58px;
+    height: 58px;
+    transform: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-discord-link {
+    width: 36px;
+    height: 36px;
+    transform: none;
+  }
+}
+
 .people-page {
   position: relative;
   width: 100%;
   min-height: 100dvh;
   overflow: hidden;
   background: #000;
+}
+
+.people-shell {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  width: min(94vw, 620px);
+  padding: 1.25rem 1.5rem calc(1.5rem + env(safe-area-inset-bottom)) 1.5rem;
+  box-sizing: border-box;
+  text-align: right;
+  font-family: 'Highway', 'Arial Narrow', sans-serif;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85), 0 0 2px rgba(0, 0, 0, 0.9);
+}
+
+.people-header {
+  display: block;
+}
+
+.people-title {
+  margin: 0;
+  color: #fff;
+  font-family: 'Highway', 'Arial Narrow', sans-serif;
+  font-size: clamp(1.8rem, 4.2vw, 2.8rem);
+  line-height: 1.1;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+}
+
+.people-subtitle,
+.people-subdates,
+.people-subtagline {
+  margin: 0.35rem 0 0;
+  font-family: 'Highway', 'Arial Narrow', sans-serif;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.85);
+}
+
+.people-subtitle {
+  color: #fff;
+  font-size: clamp(0.75rem, 1.8vw, 1rem);
+  letter-spacing: 0.06em;
+}
+
+.people-subdates {
+  color: #e0463b;
+  font-size: clamp(0.8rem, 2vw, 1.05rem);
+  letter-spacing: 0.05em;
+}
+
+.people-subtagline {
+  color: #d9d9d9;
+  font-size: clamp(0.72rem, 1.8vw, 0.95rem);
+}
+
+.people-issue-list {
+  list-style: none;
+  margin: 0.95rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 0.45rem;
+  max-width: 100%;
+}
+
+.people-issue-link {
+  font-family: 'Highway', 'Arial Narrow', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #f2f2f2;
+  background: rgba(8, 10, 14, 0.68);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 999px;
+  padding: 0.35rem 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+.people-issue-link:hover {
+  border-color: rgba(224, 70, 59, 0.9);
+  color: #fff;
+}
+
+.people-issue-link.is-active {
+  border-color: rgba(224, 70, 59, 0.95);
+  color: #fff;
+  background: rgba(224, 70, 59, 0.3);
 }
 
 .people-page .hero-img {
@@ -197,6 +299,107 @@ body {
   width: min(90vw, 38rem);
   height: clamp(8rem, 20vw, 18rem);
   z-index: 2;
+}
+
+.people-stage-chooser {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.people-stage-chooser .people-play-button {
+  position: absolute;
+  left: 50%;
+  top: 64%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-aspect-ratio: 3/2) {
+  .people-stage-chooser .people-play-button {
+    top: 61%;
+  }
+}
+
+@media (max-aspect-ratio: 10/9) {
+  .people-stage-chooser .people-play-button {
+    top: 58%;
+  }
+}
+
+.people-play-button {
+  position: absolute;
+  width: 3.2rem;
+  height: 3.8rem;
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: pointer;
+  display: block;
+  padding: 0;
+  transition: transform 0.2s ease;
+  pointer-events: auto;
+}
+
+.people-play-button:hover {
+  transform: translate(-50%, -50%) scale(1.06);
+  background: transparent;
+  box-shadow: none;
+}
+
+.people-play-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2.2rem;
+  height: 2.8rem;
+  transform: translate(-50%, -50%);
+  background: #ff5148;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  filter: drop-shadow(0 0 10px rgba(255, 81, 72, 0.55));
+}
+
+.people-chooser-shell {
+  left: 1.25rem;
+  top: 1.25rem;
+  right: auto;
+  bottom: auto;
+  width: min(94vw, 620px);
+  max-width: min(94vw, 620px);
+  text-align: left;
+}
+
+@media (max-width: 1200px) and (min-width: 641px) {
+  .people-chooser-shell {
+    top: 5.2rem;
+  }
+}
+
+.people-chooser-shell .program-line {
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.people-chooser-shell .program-date,
+.people-chooser-shell .program-name {
+  white-space: nowrap;
+}
+
+.people-chooser-shell .program-name {
+  overflow: visible;
+  text-overflow: clip;
+}
+
+.people-part-list {
+  position: absolute;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  justify-content: flex-end;
+  z-index: 3;
+  width: min(94vw, 38rem);
 }
 
 .people-arrow {
@@ -269,13 +472,102 @@ body {
     font-size: clamp(0.85rem, 4vw, 1.1rem);
     letter-spacing: 0.05em;
   }
+
+  .people-title,
+  .people-subtitle,
+  .people-subdates,
+  .people-subtagline {
+    text-align: left;
+  }
+
+  .people-issue-list {
+    justify-content: flex-start;
+  }
+
+  .people-shell {
+    text-align: left;
+  }
+
+  .people-program-slot {
+    left: 0.75rem;
+    right: 0.75rem;
+    top: 4rem;
+    width: auto;
+  }
+
+  .people-stage-chooser {
+    inset: 0;
+  }
+
+  .people-stage-chooser .people-play-button {
+    top: 56%;
+  }
+
+  .people-chooser-shell {
+    left: 0.5rem;
+    right: 0.5rem;
+    top: auto;
+    bottom: 0.5rem;
+    width: auto;
+    max-width: none;
+    padding: 0.65rem 0.75rem calc(0.75rem + env(safe-area-inset-bottom)) 0.75rem;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.62) 0%, rgba(0, 0, 0, 0.82) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 5;
+  }
+
+  .people-chooser-shell .program-widget {
+    margin: 0;
+    padding: 0;
+    max-height: 28dvh;
+    overflow-y: auto;
+  }
+
+  .people-chooser-shell .program-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .people-chooser-shell .program-heading {
+    margin-bottom: 0.55rem;
+    font-size: 1.1rem;
+  }
+
+  .people-chooser-shell .program-row {
+    padding: 0.45rem 0;
+  }
+
+  .people-chooser-shell .program-row.is-active .program-description {
+    font-size: 0.95rem;
+    max-height: 4.2rem;
+    margin-top: 0.5rem;
+  }
+
+  .people-part-list {
+    top: 4.25rem;
+    right: 0.5rem;
+    bottom: auto;
+    width: min(56vw, 13.5rem);
+    justify-content: flex-end;
+  }
 }
 
 .people-back {
   position: absolute;
   top: 2rem;
   left: 2rem;
-  z-index: 3;
+  z-index: 6;
+}
+
+@media (max-width: 900px) {
+  .people-shell {
+    width: min(96vw, 520px);
+    padding: 1rem 1rem calc(1.25rem + env(safe-area-inset-bottom)) 1rem;
+  }
 }
 
 .info-page {

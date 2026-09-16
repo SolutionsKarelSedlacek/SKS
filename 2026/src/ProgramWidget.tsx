@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './ProgramWidget.css';
+import BaseListWidget, { BaseListWidgetItem } from './BaseListWidget';
 
-interface ProgramDay {
+export interface ProgramDay {
   date: string;
   name: string;
   description: string;
 }
 
-const days: ProgramDay[] = [
+export const programDays: ProgramDay[] = [
   { date: '27.12.', name: 'Karlův Hod Vánoční', description: 'Tradiční sváteční Karlopoliský obyčej' },
   { date: '28.12.', name: 'Připravený program', description: 'Tato aktivita ještě nebude veřejná' },
   { date: '29.12.', name: 'Připravená indoor aktivita', description: 'Tato aktivita se dá uhádnout' },
@@ -18,36 +19,15 @@ const days: ProgramDay[] = [
   { date: '03.01.', name: 'Nelegendovaný odjezd', description: 'Však už toho bude dost' },
 ];
 
+const programRows: BaseListWidgetItem[] = programDays.map((day) => ({
+  key: day.date,
+  date: day.date,
+  name: day.name,
+  description: day.description,
+}));
+
 const ProgramWidget: React.FC = () => {
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-
-  return (
-    <section className="program-widget">
-      <h2 className="program-heading">Přes den freestyle, večer legenda a&nbsp;program</h2>
-
-      <ul
-        className={`program-list${activeIndex !== null ? ' has-active' : ''}`}
-        onMouseLeave={() => setActiveIndex(null)}
-      >
-        {days.map((day, index) => {
-          const isActive = activeIndex === index;
-          return (
-            <li
-              key={day.date}
-              className={`program-row${isActive ? ' is-active' : ''}`}
-              onMouseEnter={() => setActiveIndex(index)}
-            >
-              <div className="program-line">
-                <span className="program-date">{day.date}</span>
-                <span className="program-name">{day.name}</span>
-              </div>
-              <p className="program-description">{day.description}</p>
-            </li>
-          );
-        })}
-      </ul>
-    </section>
-  );
+  return <BaseListWidget heading="Přes den freestyle, večer legenda a program" items={programRows} />;
 };
 
 export default ProgramWidget;
