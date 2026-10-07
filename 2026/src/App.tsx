@@ -119,14 +119,12 @@ const SilvesterPage: React.FC = () => {
               >
                 Účastníci
               </button>
-              <a
-                href={archiveUrl}
-                className="hero-info-link"
-                target="_blank"
-                rel="noopener noreferrer"
+              <span
+                className="archive-disabled"
+                title="Archiv je v přípravě"
               >
                 Archiv
-              </a>
+              </span>
               <a
                 href={discordUrl}
                 target="_blank"

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const publicBaseUrl = process.env.PUBLIC_URL || '';
 const sphere_space = `${publicBaseUrl}/karel_clean.png`;
-const apiUrlBase = 'https://script.google.com/macros/s/AKfycbymzsuKrkZvs_XlsVBodLjaARQ-4c5IdBJgULD0UtCHsiZV4cvZgLQfPDcClT_uZ2TT/exec';
+const apiUrlBase = 'https://script.google.com/macros/s/AKfycbwGQiKVHIjORN2YFcmWh371Vrjc5jLkl4LwsqHEgVSVVBauBpYSzgcQF0mGFaaOkGeB/exec';
 
 type FormPageProps = {
   token: string;
@@ -26,6 +26,8 @@ const FormPage: React.FC<FormPageProps> = ({ token, onBack = () => undefined }) 
         const response = await fetch(`${apiUrlBase}?token=${encodeURIComponent(token)}`);
         const text = await response.text();
 
+        console.log(text);
+
         try {
           const parsed = JSON.parse(text) as ApiResponse;
           console.log('api response', parsed);
@@ -47,9 +49,9 @@ const FormPage: React.FC<FormPageProps> = ({ token, onBack = () => undefined }) 
   const formErrorLines = errorCode
     ? errorCode.toLowerCase() === 'your wife should not meet your mistress'
       ? [
-          'Už mockrát použitá pozvánka.',
-          'Toto není pozvánka.',
-        ]
+        'Už mockrát použitá pozvánka.',
+        'Toto není pozvánka.',
+      ]
       : errorCode.toLowerCase() === 'not listed'
         ? ['Ne.', 'Toto není pozvánka.']
         : [errorCode]
@@ -82,10 +84,10 @@ const FormPage: React.FC<FormPageProps> = ({ token, onBack = () => undefined }) 
         <h1 className="hero-title form-title">
           {hasValidLink ? (
             <div>
-            <a href={apiData?.url} target="_blank" rel="noopener noreferrer" className="form-stars-link">
-              Zažij Karlopolis
-            </a>
-            <p className="hero-dates">Tohle je pozvánka.</p>
+              <a href={apiData?.url} target="_blank" rel="noopener noreferrer" className="form-stars-link">
+                Zažij Karlopolis
+              </a>
+              <p className="hero-dates">Tohle je pozvánka.</p>
             </div>
           ) : apiData ? (
             <div className="form-api-result">

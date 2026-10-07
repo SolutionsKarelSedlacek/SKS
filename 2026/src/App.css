@@ -139,6 +139,10 @@ body {
   transition: opacity 0.2s ease;
 }
 
+.archive-disabled {
+  color: grey
+}
+
 .hero-info-link:hover,
 .hero-info-button:hover {
   opacity: 0.75;
