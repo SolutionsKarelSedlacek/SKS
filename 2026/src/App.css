@@ -951,7 +951,141 @@ body {
   font-size: 1.2rem;
 }
 
+/* Story sections and navigation */
+.people-story-counter {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  z-index: 8;
+  display: grid;
+  gap: 0.25rem;
+  min-width: 9rem;
+  padding: 0.45rem 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 0.55rem;
+  background: rgba(0, 0, 0, 0.72);
+  color: #fff;
+  font-family: 'Highway', 'Arial Narrow', sans-serif;
+  text-align: right;
+  backdrop-filter: blur(5px);
+}
+
+/* Stories with one section (or none) show only the page counter, so the box stays compact. */
+.people-story-counter.is-pages-only {
+  min-width: 0;
+}
+
+.people-section-counter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  white-space: nowrap;
+}
+
+.people-section-counter button {
+  width: 1.55rem;
+  height: 1.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #ff5148;
+  font-size: 1.25rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.people-section-counter button:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.people-frame-counter {
+  color: #f5ecbf;
+  font-size: 0.9rem;
+}
+
+.people-parts-shell {
+  z-index: 7;
+}
+
+/* Phone held sideways: names on top so they don't overlap subtitles */
+.people-parts-shell.is-top {
+  top: 0.75rem;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  width: max-content;
+  max-width: min(56vw, 34rem);
+  padding: 0;
+  transform: translateX(-50%);
+}
+
+.people-parts-shell.is-top .people-part-list {
+  position: static;
+  width: 100%;
+  margin: 0;
+  justify-content: center;
+}
+
+.people-opening-info {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 5;
+  width: min(82vw, 28rem);
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.75rem;
+  background: rgba(0, 0, 0, 0.82);
+  color: #fff;
+  font-family: 'Highway', 'Arial Narrow', sans-serif;
+  text-align: center;
+}
+
+.people-opening-info h2 {
+  margin: 0 0 0.65rem;
+  color: #ff5148;
+  font-size: 1.15rem;
+}
+
+.people-opening-info p {
+  margin: 0 0 0.75rem;
+  color: #ddd;
+  font-size: 0.9rem;
+}
+
+.people-opening-info ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0.45rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.people-opening-info li {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  font-size: 0.82rem;
+}
+
+@media (orientation: landscape) and (max-height: 500px) {
+  .people-story-counter {
+    top: 0.75rem;
+    right: 0.75rem;
+  }
+}
+
 @media (max-width: 640px) {
+  .hero-img {
+    object-position: 42% 16%;
+  }
+
   .local-page-card {
     width: calc(100vw - 1.5rem);
   }
@@ -976,6 +1110,15 @@ body {
 
   .merch-page {
     padding-top: 4.5rem;
+  }
+
+  .people-story-counter {
+    top: 0.55rem;
+    right: 0.55rem;
+  }
+
+  .people-opening-info {
+    top: 55%;
   }
 }
 
@@ -1044,4 +1187,24 @@ body {
   .info-note {
     font-size: 0.9rem;
   }
+}
+
+/* Story names */
+.people-opening-names {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0.55rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.people-opening-start {
+  margin-top: 0.9rem;
+}
+
+.people-opening-names li {
+  padding: 0;
+  border: 0;
 }

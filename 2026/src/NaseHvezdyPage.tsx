@@ -1,7 +1,7 @@
 import React from 'react';
 
 const publicBaseUrl = process.env.PUBLIC_URL || '';
-const hero = `${publicBaseUrl}/karel.png`;
+const hero = `${publicBaseUrl}/karel.webp`;
 
 type NaseHvezdyPageProps = {
 };

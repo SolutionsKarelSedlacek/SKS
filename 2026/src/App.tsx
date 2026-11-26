@@ -7,7 +7,7 @@ import MerchPage from './MerchPage';
 import PeopleOfKarlopolisPage from './PeopleOfKarlopolisPage';
 
 const publicBaseUrl = process.env.PUBLIC_URL || '';
-const hero = `${publicBaseUrl}/karel.png`;
+const hero = `${publicBaseUrl}/karel.webp`;
 const discord = `${publicBaseUrl}/discord.svg`;
 const discordHover = `${publicBaseUrl}/discord2.svg`;
 

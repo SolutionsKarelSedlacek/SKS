@@ -16,7 +16,7 @@ export const taleIssues: TaleIssue[] = [
   {
     id: 'S03E02',
     label: '- Stará dobrá mafie',
-    description: 'Mock episode pro budoucí story.',
+    description: 'Karel se vrací do světa mafie.',
   },
   // {
   //   id: 'S03E03',

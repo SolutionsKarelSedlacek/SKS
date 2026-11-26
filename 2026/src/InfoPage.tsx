@@ -2,7 +2,7 @@ import React from 'react';
 import ProgramWidget from './ProgramWidget';
 
 const publicBaseUrl = process.env.PUBLIC_URL || '';
-const background = `${publicBaseUrl}/background.png`;
+const background = `${publicBaseUrl}/background.webp`;
 
 const chataUrl = 'https://www.e-chalupy.cz/chalupa-u-alenky-albrechtice-v-jizerskych-horach-pronajem-o16371';
 

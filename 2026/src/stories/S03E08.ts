@@ -6,12 +6,12 @@ const s03e08OrbVideoId = '3C5ofWfcuHw';
 export const s03e08Story: StoryItem[] = [
   {
     text: 'Brzy doplníme plný příběh.',
-    image: `${publicBaseUrl}/karel_clean.png`,
+    image: `${publicBaseUrl}/karel_clean.webp`,
     youtubeId: s03e08OrbVideoId,
   },
-  { text: 'S03E07 - Femme fatale', image: `${publicBaseUrl}/blackscreen.png` },
+  { text: 'S03E07 - Femme fatale', image: `${publicBaseUrl}/blackscreen.webp` },
   {
     text: 'Tahle epizoda je ve vývoji.',
-    image: `${publicBaseUrl}/avatar_karel.png`,
+    image: `${publicBaseUrl}/avatar_karel.webp`,
   },
 ];
