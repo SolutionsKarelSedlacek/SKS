@@ -1,9 +1,10 @@
 import { StoryItem } from './types';
 
 const publicBaseUrl = process.env.PUBLIC_URL || '';
+const s03e01OrbVideoId = 'jfar7XSgaXI';
 
 export const s03e01Story: StoryItem[] = [
-  { text: '...', image: `${publicBaseUrl}/avatar.png` },
+  { text: '...', image: `${publicBaseUrl}/avatar.png`, youtubeId: s03e01OrbVideoId },
   { text: 'Kdo jsi?', image: `${publicBaseUrl}/avatar.png` },
   { text: 'V nitru duše cítím úzkost.', image: `${publicBaseUrl}/avatar.png` },
   { text: 'Mám pocit, že tě znám.', image: `${publicBaseUrl}/avatar.png` },

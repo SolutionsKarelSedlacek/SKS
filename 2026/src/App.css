@@ -290,9 +290,26 @@ body {
 }
 
 .people-figure {
-  z-index: 1;
+  z-index: 2;
   filter: drop-shadow(0 25px 25px rgba(0, 0, 0, 0.4));
   transition: transform 0.25s ease;
+  pointer-events: none;
+}
+
+.people-hole-video {
+  position: absolute;
+  z-index: 1;
+  pointer-events: auto;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.people-hole-video-frame {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  pointer-events: auto;
 }
 
 .people-stage {
@@ -303,6 +320,7 @@ body {
   width: min(90vw, 38rem);
   height: clamp(8rem, 20vw, 18rem);
   z-index: 2;
+  pointer-events: none;
 }
 
 .people-stage-chooser {
@@ -310,7 +328,7 @@ body {
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 6;
   pointer-events: none;
 }
 
@@ -335,8 +353,8 @@ body {
 
 .people-play-button {
   position: absolute;
-  width: 3.2rem;
-  height: 3.8rem;
+  width: clamp(5rem, 9vw, 6.5rem);
+  height: clamp(5rem, 9vw, 6.5rem);
   border: none;
   border-radius: 0;
   background: transparent;
@@ -346,6 +364,7 @@ body {
   padding: 0;
   transition: transform 0.2s ease;
   pointer-events: auto;
+  touch-action: manipulation;
 }
 
 .people-play-button:hover {
@@ -410,6 +429,8 @@ body {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  z-index: 3;
+  pointer-events: auto;
   width: clamp(3rem, 6vw, 4.25rem);
   height: clamp(3rem, 6vw, 4.25rem);
   display: inline-flex;
@@ -456,6 +477,14 @@ body {
   font-size: clamp(1rem, 2vw, 1.8rem);
   letter-spacing: 0.08em;
   text-transform: none;
+}
+
+.people-text-bg {
+  background: rgba(80, 80, 80, 0.65);
+  border: 1px solid rgba(180, 180, 180, 0.45);
+  border-radius: 0.75rem;
+  padding: 0.4rem 0.7rem;
+  box-sizing: border-box;
 }
 
 @media (max-width: 640px) {
@@ -505,6 +534,11 @@ body {
 
   .people-stage-chooser .people-play-button {
     top: 56%;
+  }
+
+  .people-play-button {
+    width: clamp(4.4rem, 18vw, 5.6rem);
+    height: clamp(4.4rem, 18vw, 5.6rem);
   }
 
   .people-chooser-shell {

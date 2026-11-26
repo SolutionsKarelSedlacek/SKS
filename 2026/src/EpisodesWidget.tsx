@@ -15,9 +15,39 @@ export const taleIssues: TaleIssue[] = [
   },
   {
     id: 'S03E02',
-    label: '- Karlopolis tě zahltí',
+    label: '- Stará dobrá mafie',
     description: 'Mock episode pro budoucí story.',
   },
+  // {
+  //   id: 'S03E03',
+  //   label: '- Staré dobré pivo',
+  //   description: 'Mock episode pro budoucí story.',
+  // },
+  // {
+  //   id: 'S03E04',
+  //   label: '- Kluk co chtěl být astronaut',
+  //   description: 'Mock episode pro budoucí story.',
+  // },
+  // {
+  //   id: 'S03E05',
+  //   label: '- Stará ZOO',
+  //   description: 'Mock episode pro budoucí story.',
+  // },
+  // {
+  //   id: 'S03E06',
+  //   label: '- Rorschach',
+  //   description: 'Mock episode pro budoucí story.',
+  // },
+  // {
+  //   id: 'S03E07',
+  //   label: '- Femme fatale',
+  //   description: 'Mock episode pro budoucí story.',
+  // },
+  // {
+  //   id: 'S03E08',
+  //   label: '- Staří známí',
+  //   description: 'Mock episode pro budoucí story.',
+  // },
 ];
 
 const episodeRows: BaseListWidgetItem[] = taleIssues.map((issue) => ({

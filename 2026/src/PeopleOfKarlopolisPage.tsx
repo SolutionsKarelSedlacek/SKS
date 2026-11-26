@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import EpisodesWidget from './EpisodesWidget';
 import { getStoryByEpisodeId, storiesByEpisodeId } from './stories';
 import { StoryItem } from './stories/types';
@@ -6,6 +6,16 @@ import { StoryItem } from './stories/types';
 const publicBaseUrl = process.env.PUBLIC_URL || '';
 const background = `${publicBaseUrl}/karel_clean.png`;
 const PREFETCH_CHUNK_SIZE = 4;
+const ORB_HOLE_BOUNDS = { x: 688, y: 388, width: 293, height: 297 };
+const KAREL_CLEAN_DIMENSIONS = { width: 1672, height: 941 };
+const HERO_OBJECT_POSITION = { x: 0.5, y: 0.22 };
+
+type HoleFrameRect = {
+  left: number;
+  top: number;
+  width: number;
+  height: number;
+};
 
 const scheduleIdle = (callback: () => void) => {
   if (typeof window !== 'undefined' && 'requestIdleCallback' in window) {
@@ -64,10 +74,41 @@ const deriveStoryParts = (activeStory: StoryItem[]) => {
     });
 };
 
+const buildYoutubeEmbedUrl = (youtubeId?: string) => {
+  if (!youtubeId) {
+    return null;
+  }
+
+  const normalizedId = youtubeId.trim();
+  if (!/^[a-zA-Z0-9_-]{11}$/.test(normalizedId)) {
+    return null;
+  }
+
+  const params = new URLSearchParams({
+    autoplay: '1',
+    controls: '1',
+    disablekb: '0',
+    fs: '1',
+    loop: '1',
+    modestbranding: '1',
+    mute: '0',
+    playsinline: '1',
+    rel: '0',
+    playlist: normalizedId,
+  });
+
+  return `https://www.youtube.com/embed/${normalizedId}?${params.toString()}`;
+};
+
 const PeopleOfKarlopolisPage: React.FC = () => {
   const [selectedTaleId, setSelectedTaleId] = useState<string | null>(null);
   const [isStoryOpen, setIsStoryOpen] = useState(false);
   const [index, setIndex] = useState(0);
+  const [holeFrameRect, setHoleFrameRect] = useState<HoleFrameRect | null>(null);
+  const pageRef = useRef<HTMLDivElement | null>(null);
+  const figureRef = useRef<HTMLImageElement | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const activeSoundRef = useRef<string | null>(null);
 
   const selectedStory = useMemo(() => getStoryByEpisodeId(selectedTaleId), [selectedTaleId]);
 
@@ -87,6 +128,12 @@ const PeopleOfKarlopolisPage: React.FC = () => {
     () => (selectedStory && isStoryOpen ? selectedStory[index] ?? selectedStory[0] : null),
     [selectedStory, index, isStoryOpen]
   );
+  const currentYoutubeEmbedUrl = useMemo(
+    () => buildYoutubeEmbedUrl(current?.youtubeId),
+    [current?.youtubeId]
+  );
+  const currentSound = current?.sound?.trim() || null;
+  const isKarelCleanFrame = Boolean(current?.image.endsWith('/karel_clean.png'));
   const activeImage = current?.image ?? background;
   const activeEnd = Math.max((selectedStory?.length ?? 1) - 1, 0);
   const hasLeftArrow = Boolean(selectedStory && isStoryOpen && index > 0);
@@ -98,6 +145,99 @@ const PeopleOfKarlopolisPage: React.FC = () => {
 
     return deriveStoryParts(selectedStory);
   }, [selectedStory]);
+
+  const recalculateHoleFrameRect = useCallback(() => {
+    const pageElement = pageRef.current;
+    const figureElement = figureRef.current;
+
+    if (!pageElement || !figureElement) {
+      return;
+    }
+
+    const pageRect = pageElement.getBoundingClientRect();
+    const naturalWidth = figureElement.naturalWidth || KAREL_CLEAN_DIMENSIONS.width;
+    const naturalHeight = figureElement.naturalHeight || KAREL_CLEAN_DIMENSIONS.height;
+
+    if (!naturalWidth || !naturalHeight || !pageRect.width || !pageRect.height) {
+      return;
+    }
+
+    const scale = Math.max(pageRect.width / naturalWidth, pageRect.height / naturalHeight);
+    const renderedWidth = naturalWidth * scale;
+    const renderedHeight = naturalHeight * scale;
+    const offsetX = (pageRect.width - renderedWidth) * HERO_OBJECT_POSITION.x;
+    const offsetY = (pageRect.height - renderedHeight) * HERO_OBJECT_POSITION.y;
+
+    setHoleFrameRect({
+      left: offsetX + ORB_HOLE_BOUNDS.x * scale,
+      top: offsetY + ORB_HOLE_BOUNDS.y * scale,
+      width: ORB_HOLE_BOUNDS.width * scale,
+      height: ORB_HOLE_BOUNDS.height * scale,
+    });
+  }, []);
+
+  useEffect(() => {
+    if (!isStoryOpen || !currentYoutubeEmbedUrl || !isKarelCleanFrame) {
+      setHoleFrameRect(null);
+      return;
+    }
+
+    recalculateHoleFrameRect();
+    window.addEventListener('resize', recalculateHoleFrameRect);
+
+    const figureElement = figureRef.current;
+    figureElement?.addEventListener('load', recalculateHoleFrameRect);
+
+    return () => {
+      window.removeEventListener('resize', recalculateHoleFrameRect);
+      figureElement?.removeEventListener('load', recalculateHoleFrameRect);
+    };
+  }, [isStoryOpen, currentYoutubeEmbedUrl, isKarelCleanFrame, activeImage, recalculateHoleFrameRect]);
+
+  useEffect(() => {
+    const audio = new Audio();
+    audio.preload = 'auto';
+    audioRef.current = audio;
+
+    return () => {
+      audio.pause();
+      audio.removeAttribute('src');
+      audio.load();
+      audioRef.current = null;
+      activeSoundRef.current = null;
+    };
+  }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    if (!audio) {
+      return;
+    }
+
+    if (!isStoryOpen || !currentSound) {
+      if (activeSoundRef.current) {
+        audio.pause();
+        audio.currentTime = 0;
+        audio.removeAttribute('src');
+        audio.load();
+        activeSoundRef.current = null;
+      }
+      return;
+    }
+
+    if (activeSoundRef.current === currentSound) {
+      return;
+    }
+
+    audio.pause();
+    audio.src = currentSound;
+    audio.currentTime = 0;
+    activeSoundRef.current = currentSound;
+    audio.play().catch(() => {
+      // Autoplay can be blocked without a direct user gesture.
+    });
+  }, [isStoryOpen, currentSound]);
 
   const goNext = () => {
     if (!selectedStory || !isStoryOpen) {
@@ -150,9 +290,39 @@ const PeopleOfKarlopolisPage: React.FC = () => {
   };
 
   return (
-    <div className="people-page">
+    <div className="people-page" ref={pageRef}>
       <img src={background} alt="Karel Sedláček" className="hero-img" decoding="async" fetchPriority="high" />
-      <img src={activeImage} alt="Karlopolis" className="hero-img people-figure" decoding="async" fetchPriority="high" />
+
+      {isStoryOpen && currentYoutubeEmbedUrl && holeFrameRect && (
+        <div
+          className="people-hole-video"
+          style={{
+            left: `${holeFrameRect.left}px`,
+            top: `${holeFrameRect.top}px`,
+            width: `${holeFrameRect.width}px`,
+            height: `${holeFrameRect.height}px`,
+          }}
+          aria-hidden="true"
+        >
+          <iframe
+            className="people-hole-video-frame"
+            src={currentYoutubeEmbedUrl}
+            title="YouTube video v otvoru"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+            loading="lazy"
+          />
+        </div>
+      )}
+
+      <img
+        src={activeImage}
+        alt="Karlopolis"
+        className="hero-img people-figure"
+        decoding="async"
+        fetchPriority="high"
+        ref={figureRef}
+      />
 
       {isStoryOpen && (
         <button type="button" className="info-back people-back" onClick={backToChooser} aria-label="Zpět na výběr epizody">
@@ -178,8 +348,6 @@ const PeopleOfKarlopolisPage: React.FC = () => {
 
       {isStoryOpen && (
         <div className="people-stage" aria-label="Přehled příběhu Karlopolisu">
-          <div className="people-orbit" aria-hidden="true" />
-
           {hasLeftArrow && (
             <button type="button" className="people-arrow people-arrow-left" onClick={goPrevious} aria-label="Předchozí">
               <svg viewBox="0 0 64 64" aria-hidden="true">
@@ -219,7 +387,7 @@ const PeopleOfKarlopolisPage: React.FC = () => {
         </div>
       )}
 
-      {isStoryOpen && <p className="hero-date people-text">{renderStoryText()}</p>}
+      {isStoryOpen && <p className={`hero-date people-text${current?.bg ? ' people-text-bg' : ''}`}>{renderStoryText()}</p>}
     </div>
   );
 };
